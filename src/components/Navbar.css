@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+
+    --terracotta:#B75C3B;
+    --cream:#FBEEDA;
+    --beige:#E1CBB2;
+    --brown:#4B3222;
+    --white:#ffffff;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+padding:22px 0;
+transition:.35s;
+background:transparent;
+
+}
+
+.navbar-scrolled{
+
+background:rgba(251,238,218,.96);
+backdrop-filter:blur(12px);
+box-shadow:0 5px 30px rgba(0,0,0,.05);
+
+}
+
+.navbar-container{
+
+width:min(1400px,92%);
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+}
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:700;
+letter-spacing:4px;
+
+text-decoration:none;
+color:var(--brown);
+
+}
+
+.logo span{
+
+color:var(--terracotta);
+
+}
+
+.nav{
+
+display:flex;
+gap:45px;
+
+}
+
+.nav a{
+
+text-decoration:none;
+color:var(--brown);
+font-weight:500;
+font-size:.95rem;
+position:relative;
+transition:.3s;
+
+}
+
+.nav a::after{
+
+content:"";
+position:absolute;
+
+left:0;
+bottom:-8px;
+
+width:0;
+height:2px;
+
+background:var(--terracotta);
+transition:.35s;
+
+}
+
+.nav a:hover::after{
+
+width:100%;
+
+}
+
+.navbar-btn{
+
+padding:14px 30px;
+
+background:var(--terracotta);
+
+color:white;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.navbar-btn:hover{
+
+transform:translateY(-2px);
+
+background:#9b472b;
+
+}
+
+.menu-btn{
+
+display:none;
+
+background:none;
+border:none;
+cursor:pointer;
+
+color:var(--brown);
+
+}
+
+@media(max-width:980px){
+
+.nav{
+
+position:fixed;
+
+top:85px;
+left:-100%;
+
+width:100%;
+height:calc(100vh - 85px);
+
+background:var(--cream);
+
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+gap:40px;
+
+transition:.4s;
+
+}
+
+.nav.active{
+
+left:0;
+
+}
+
+.navbar-btn{
+
+display:none;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.logo{
+
+font-size:1.8rem;
+
+}
+
+}
