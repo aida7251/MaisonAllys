@@ -157,7 +157,7 @@ export default function Presentation() {
             viewport={{once:true}}
           >
             <img
-              src="/images/presentation.jpg"
+              src="/images/hero-home.png"
               alt="Maison Allys"
             />
           </motion.div>

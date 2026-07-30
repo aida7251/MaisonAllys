@@ -202,7 +202,7 @@ export default function LuxuryExperience() {
           >
 
             <img
-              src="/images/luxury.jpg"
+              src="/images/hero-home.png"
               alt="Maison Allys"
             />
 
