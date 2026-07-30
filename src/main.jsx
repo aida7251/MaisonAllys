@@ -8,10 +8,10 @@ import {
 
 import App from "./App";
 
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
+import Home from "./Pages/Home";
+import Services from "./Pages/Services";
+import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 // import HowItWorks from "./pages/HowItWorks";
 // import NotFound from "./pages/NotFound";
 
