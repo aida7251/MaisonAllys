@@ -463,13 +463,7 @@ onClick={onClose}
 </div>
 
 <div className="drawer-content">
-    <button
-  className="back-btn"
-  onClick={onClose}
->
-  <ArrowLeft size={18} />
-  Retour
-</button>
+    
 
 <div className="drawer-category">
 
@@ -631,6 +625,13 @@ key={index}
             Être rappelé
 
           </a>
+          <button
+  className="back-btn"
+  onClick={onClose}
+>
+  <ArrowLeft size={18} />
+  Retour
+</button>
 
         </div>
 
