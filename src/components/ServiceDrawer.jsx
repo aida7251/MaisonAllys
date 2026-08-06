@@ -5,7 +5,9 @@ import {
   CheckCircle,
   ArrowRight,
   Phone,
+  ArrowLeft,
 } from "lucide-react";
+
 
 export default function ServiceDrawer({
 
@@ -62,6 +64,30 @@ export default function ServiceDrawer({
     <>
 
 <style>{`
+.back-btn{
+display:none;
+align-items:center;
+gap:8px;
+margin-bottom:20px;
+padding:12px 18px;
+border:none;
+background:#F7F4F1;
+color:#4B3222;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.back-btn:hover{
+background:#ECE4DD;
+}
+
+@media(max-width:768px){
+.back-btn{
+display:flex;
+}
+}
 
 .drawer-overlay{
 
@@ -437,6 +463,13 @@ onClick={onClose}
 </div>
 
 <div className="drawer-content">
+    <button
+  className="back-btn"
+  onClick={onClose}
+>
+  <ArrowLeft size={18} />
+  Retour
+</button>
 
 <div className="drawer-category">
 
