@@ -12,7 +12,7 @@ import Home from "./Pages/Home";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
-import HowItWorks from "./pages/HowItWorks";
+import HowItWorks from "./Pages/HowItWorks";
 // import NotFound from "./pages/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
