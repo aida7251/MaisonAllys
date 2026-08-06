@@ -157,7 +157,7 @@ export default function Presentation() {
             viewport={{once:true}}
           >
             <img
-              src="/images/hero-home.png"
+              src="/images/propos.jpg"
               alt="Maison Allys"
             />
           </motion.div>
@@ -179,26 +179,20 @@ export default function Presentation() {
             </h2>
 
             <p className="presentation-text">
-              Chez <strong>Maison Allys</strong>, nous transformons
-              vos envies en expériences et vos contraintes en
-              solutions. Nous orchestrons chaque demande avec
-              élégance, discrétion et un sens du détail qui fait
-              toute la différence.
+              Chez <strong>Maison Allys</strong>, nous savons que l’organisation d’un voyage, d’un événement ou d’un
+projet personnel peut rapidement devenir chronophage.
+Notre rôle est de vous écouter, de comprendre vos attentes et de vous proposer des
+solutions réellement adaptées à vos envies, à vos contraintes et à votre budget
             </p>
 
             <p className="presentation-text">
-              Qu'il s'agisse d'organiser un voyage, de réserver une
-              table, de préparer un événement, de trouver un chauffeur
-              ou de répondre à une demande plus personnelle,
-              nous mettons notre réseau et notre expertise à votre
-              service.
+              De la recherche des prestataires à la coordination des différentes étapes, nous vous
+accompagnons avec attention et transparence.
             </p>
 
             <p className="presentation-text">
-              Plus qu'une conciergerie, <strong>Maison Allys</strong>
-              est un partenaire de confiance qui simplifie votre
-              quotidien afin que vous puissiez consacrer votre temps
-              à ce qui compte vraiment.
+           Plus qu’un simple service, <strong>Maison Allys</strong> est un partenaire de confiance sur lequel vous
+pouvez vous appuyer pour donner vie à vos projets plus sereinement
             </p>
 
             <a href="#services" className="presentation-btn">

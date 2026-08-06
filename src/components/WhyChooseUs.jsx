@@ -1,52 +1,33 @@
 import { motion } from "framer-motion";
 import {
+  Users,
+  Sparkles,
   ShieldCheck,
-  Clock3,
- Gem,
- Users,
- Star,
- Handshake,
+  Handshake,
 } from "lucide-react";
 
 export default function WhyChooseUs() {
+
   const cards = [
     {
+      icon: <Users size={34} />,
+      title: "Écoute",
+      text: "Chaque accompagnement commence par une véritable compréhension de votre besoin.",
+    },
+    {
+      icon: <Sparkles size={34} />,
+      title: "Personnalisation",
+      text: "Les propositions sont adaptées à vos envies, à vos contraintes et à votre budget.",
+    },
+    {
       icon: <ShieldCheck size={34} />,
-      title: "Discrétion",
-      text: "Toutes vos demandes sont traitées avec la plus grande confidentialité.",
-    },
-    {
-      icon: <Clock3 size={34} />,
-      title: "Réactivité",
-      text: "Une équipe disponible pour répondre rapidement à chacune de vos demandes.",
-    },
-    {
-      icon: <Gem size={34} />,
-      title: "Excellence",
-      text: "Des prestations haut de gamme sélectionnées avec le plus grand soin.",
+      title: "Transparence",
+      text: "Vous restez informé des solutions proposées et libre de valider chaque étape.",
     },
     {
       icon: <Handshake size={34} />,
-      title: "Réseau Premium",
-      text: "Des partenaires de confiance pour garantir une qualité irréprochable.",
-    },
-  ];
-
-  const stats = [
-    {
-      value: "24/7",
-      label: "Disponibilité",
-      icon: <Clock3 size={28} />,
-    },
-    {
-      value: "100%",
-      label: "Service personnalisé",
-      icon: <Users size={28} />,
-    },
-    {
-      value: "5★",
-      label: "Expérience Premium",
-      icon: <Star size={28} />,
+      title: "Confiance",
+      text: "Les prestataires sont recherchés et sélectionnés avec attention selon les besoins de votre projet.",
     },
   ];
 
@@ -54,36 +35,50 @@ export default function WhyChooseUs() {
     <>
       <style>{`
 
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
       .why{
 
         padding:140px 7%;
+
         background:#FBEEDA;
 
       }
 
       .why-header{
 
+        max-width:820px;
+
+        margin:0 auto 90px;
+
         text-align:center;
-        max-width:760px;
-        margin:auto auto 90px;
 
       }
 
       .why-subtitle{
 
         color:#B75C3B;
+
         text-transform:uppercase;
+
         letter-spacing:4px;
+
         font-weight:600;
-        margin-bottom:20px;
+
+        margin-bottom:18px;
 
       }
 
       .why-title{
 
         font-family:'Cormorant Garamond',serif;
+
         font-size:4rem;
+
         color:#4B3222;
+
+        line-height:1.15;
+
         margin-bottom:25px;
 
       }
@@ -91,17 +86,24 @@ export default function WhyChooseUs() {
       .why-description{
 
         color:#6F6258;
-        line-height:1.9;
+
+        line-height:2;
+
+        font-size:1.05rem;
 
       }
 
       .why-grid{
 
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:35px;
         max-width:1350px;
+
         margin:auto;
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:35px;
 
       }
 
@@ -113,9 +115,9 @@ export default function WhyChooseUs() {
 
         border-radius:30px;
 
-        transition:.35s;
-
         box-shadow:0 20px 45px rgba(0,0,0,.06);
+
+        transition:.35s;
 
       }
 
@@ -128,94 +130,46 @@ export default function WhyChooseUs() {
       .why-icon{
 
         width:75px;
+
         height:75px;
 
         border-radius:50%;
 
         background:#B75C3B;
 
-        display:flex;
-        justify-content:center;
-        align-items:center;
-
         color:white;
 
-        margin-bottom:25px;
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        margin-bottom:24px;
 
       }
 
       .why-card h3{
 
         color:#4B3222;
-        font-size:1.5rem;
-        margin-bottom:15px;
+
+        font-size:1.45rem;
+
+        margin-bottom:14px;
 
       }
 
       .why-card p{
 
         color:#6F6258;
-        line-height:1.8;
 
-      }
-
-      .stats{
-
-        margin-top:90px;
-
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-
-        gap:30px;
-
-        max-width:1200px;
-        margin-left:auto;
-        margin-right:auto;
-
-      }
-
-      .stat{
-
-        background:#4B3222;
-        color:white;
-
-        border-radius:25px;
-
-        padding:40px;
-
-        text-align:center;
-
-      }
-
-      .stat svg{
-
-        color:#E1CBB2;
-        margin-bottom:20px;
-
-      }
-
-      .stat h2{
-
-        font-size:3rem;
-        margin-bottom:10px;
-
-      }
-
-      .stat p{
-
-        opacity:.85;
+        line-height:1.9;
 
       }
 
       @media(max-width:900px){
 
         .why-grid{
-
-          grid-template-columns:1fr;
-
-        }
-
-        .stats{
 
           grid-template-columns:1fr;
 
@@ -229,7 +183,7 @@ export default function WhyChooseUs() {
 
       }
 
-      @media(max-width:700px){
+      @media(max-width:768px){
 
         .why{
 
@@ -251,47 +205,50 @@ export default function WhyChooseUs() {
 
       }
 
-      `}</style>
-
-      <section className="why">
+      `}</style>      <section className="why">
 
         <div className="why-header">
 
           <p className="why-subtitle">
+
             Pourquoi Maison Allys
+
           </p>
 
           <h2 className="why-title">
-            Une expérience pensée autour
-            de votre sérénité.
+
+            Un accompagnement fondé sur
+            l'écoute, la confiance et la
+            personnalisation.
+
           </h2>
 
           <p className="why-description">
-            Notre mission est simple : vous faire gagner du temps,
-            vous simplifier la vie et vous offrir un accompagnement
-            discret, fiable et haut de gamme.
+
+            Chez Maison Allys, chaque projet est unique.
+            Nous prenons le temps de comprendre vos besoins
+            afin de vous proposer des solutions adaptées,
+            en toute transparence et avec des partenaires
+            sélectionnés avec soin.
+
           </p>
 
         </div>
 
         <div className="why-grid">
 
-          {cards.map((card,index)=>(
+          {cards.map((card, index) => (
 
             <motion.div
-
               key={index}
-
               className="why-card"
-
-              initial={{opacity:0,y:60}}
-
-              whileInView={{opacity:1,y:0}}
-
-              transition={{duration:.6,delay:index*.15}}
-
-              viewport={{once:true}}
-
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: .6,
+                delay: index * .15
+              }}
+              viewport={{ once: true }}
             >
 
               <div className="why-icon">
@@ -300,41 +257,17 @@ export default function WhyChooseUs() {
 
               </div>
 
-              <h3>{card.title}</h3>
+              <h3>
 
-              <p>{card.text}</p>
+                {card.title}
 
-            </motion.div>
+              </h3>
 
-          ))}
+              <p>
 
-        </div>
+                {card.text}
 
-        <div className="stats">
-
-          {stats.map((item,index)=>(
-
-            <motion.div
-
-              key={index}
-
-              className="stat"
-
-              initial={{opacity:0,scale:.9}}
-
-              whileInView={{opacity:1,scale:1}}
-
-              transition={{duration:.6,delay:index*.2}}
-
-              viewport={{once:true}}
-
-            >
-
-              {item.icon}
-
-              <h2>{item.value}</h2>
-
-              <p>{item.label}</p>
+              </p>
 
             </motion.div>
 

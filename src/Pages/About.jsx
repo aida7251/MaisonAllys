@@ -5,6 +5,8 @@ import ValuesSection from "../components/about/ValuesSection";
 import ExperienceSection from "../components/about/ExperienceSection";
 import CommitmentsSection from "../components/about/CommitmentsSection";
 import CTAAbout from "../components/about/CTAAbout";
+import ArticlesSection from "../components/ArticlesSection";
+import Footer from "../components/Footer";
 
 export default function About() {
   return (
@@ -22,6 +24,8 @@ export default function About() {
       <CommitmentsSection />
 
       <CTAAbout />
+      <ArticlesSection />
+      <Footer />
     </>
   );
 }

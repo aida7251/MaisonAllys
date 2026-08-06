@@ -6,6 +6,8 @@ import Process from "../components/Process";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
 import CTA from "../components/CTA";
+import ArticlesSection from "../components/ArticlesSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -24,7 +26,10 @@ export default function Home() {
 
       <Testimonials />
 
+      
+      <ArticlesSection />
       <CTA />
+      <Footer />
     </>
   );
 }

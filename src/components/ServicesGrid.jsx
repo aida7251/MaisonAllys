@@ -6,7 +6,7 @@ import {
   CalendarDays,
   HeartHandshake,
   Ticket,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 
 export default function ServicesGrid({ onSelectService }) {
@@ -14,100 +14,100 @@ export default function ServicesGrid({ onSelectService }) {
   const services = [
 
     {
-      id:1,
-      category:"Lifestyle",
-      title:"Voyages sur mesure",
-      image:"/images/services/voyage.jpg",
-      icon:<Plane size={22}/>,
+      id: 1,
+      category: "Évasion",
+      title: "Voyages sur mesure",
+      image: "/images/voyages.jpg",
+      icon: <Plane size={22} />,
       description:
-      "Nous organisons vos déplacements privés ou professionnels avec une prise en charge complète.",
+        "Nous vous accompagnons dans la préparation de vos séjours privés ou professionnels, en France comme à l'étranger.",
 
-      features:[
-        "Billets d'avion",
-        "Hôtels",
-        "Chauffeurs privés"
-      ]
+      features: [
+        "Transports",
+        "Hébergements",
+        "Activités et itinéraires",
+      ],
     },
 
     {
-      id:2,
-      category:"Gastronomie",
-      title:"Restaurants",
-      image:"/images/services/restaurants.jpg",
-      icon:<UtensilsCrossed size={22}/>,
+      id: 2,
+      category: "Gastronomie",
+      title: "Restaurants et sorties",
+      image: "/images/restaurant.jpg",
+      icon: <UtensilsCrossed size={22} />,
       description:
-      "Réservez les meilleures tables et profitez d'expériences culinaires uniques.",
+        "Nous recherchons les établissements adaptés à vos envies et vous accompagnons dans l'organisation de vos sorties.",
 
-      features:[
-        "Tables exclusives",
-        "Évènements privés",
-        "Chefs renommés"
-      ]
+      features: [
+        "Restaurants",
+        "Brunchs et salons de thé",
+        "Adresses pour vos occasions",
+      ],
     },
 
     {
-      id:3,
-      category:"Organisation",
-      title:"Évènements",
-      image:"/images/services/events.jpg",
-      icon:<CalendarDays size={22}/>,
+      id: 3,
+      category: "Moments à célébrer",
+      title: "Événements",
+      image: "/images/evennement.jpg",
+      icon: <CalendarDays size={22} />,
       description:
-      "Organisation complète de vos événements privés et professionnels.",
+        "Nous vous accompagnons dans l'organisation de vos événements privés ou professionnels, de la recherche des prestataires à la coordination des différentes étapes.",
 
-      features:[
-        "Mariages",
+      features: [
         "Anniversaires",
-        "Séminaires"
-      ]
+        "Mariages",
+        "Célébrations et surprises",
+      ],
     },
 
     {
-      id:4,
-      category:"Wellness",
-      title:"Bien-être",
-      image:"/images/services/spa.jpg",
-      icon:<HeartHandshake size={22}/>,
+      id: 4,
+      category: "Parenthèses pour soi",
+      title: "Bien-être",
+      image: "/images/spa.jpg",
+      icon: <HeartHandshake size={22} />,
       description:
-      "Accordez-vous un moment de détente grâce à nos prestations haut de gamme.",
+        "Nous recherchons et organisons des prestations adaptées pour vous permettre de prendre soin de vous et de profiter d'un véritable moment de détente.",
 
-      features:[
-        "Spa",
-        "Massage",
-        "Coach privé"
-      ]
+      features: [
+        "Spas et massages",
+        "Beauté et soins",
+        "Activités sportives et bien-être",
+      ],
     },
 
     {
-      id:5,
-      category:"Expériences",
-      title:"Loisirs",
-      image:"/images/services/loisirs.jpg",
-      icon:<Ticket size={22}/>,
+      id: 5,
+      category: "Moments à partager",
+      title: "Loisirs et expériences",
+      image: "/images/loisirs.jpg",
+      icon: <Ticket size={22} />,
       description:
-      "Profitez d'activités exclusives et créez des souvenirs inoubliables.",
+        "Nous imaginons des activités adaptées à vos envies, que vous souhaitiez profiter d'un moment seul, en couple, en famille ou entre amis.",
 
-      features:[
-        "Golf",
-        "Yacht",
-        "Excursions"
-      ]
+      features: [
+        "Excursions",
+        "Activités et loisirs",
+        "Expériences personnalisées",
+      ],
     },
 
     {
-      id:6,
-      category:"Conciergerie",
-      title:"Demandes personnalisées",
-      image:"/images/services/custom.jpg",
-      icon:<Sparkles size={22}/>,
+      id: 6,
+      category: "Services du quotidien",
+      title: "Demandes personnalisées",
+      image: "/images/demande.jpg",
+      icon: <Sparkles size={22} />,
       description:
-      "Vous demandez, nous trouvons la meilleure solution pour répondre à vos besoins.",
+        "Vous avez une demande qui ne correspond à aucune de ces catégories ? Expliquez-nous votre besoin et nous rechercherons la solution la plus adaptée.",
 
-      features:[
-        "Shopping",
-        "Courses",
-        "Assistance"
-      ]
-    }
+      features: [
+        "Recherche de prestataires",
+        "Idées cadeaux et surprises",
+        "Assistance ponctuelle",
+      ],
+    },
 
   ];
 
@@ -120,6 +120,7 @@ export default function ServicesGrid({ onSelectService }) {
 .services-grid{
 
     padding:0 7% 120px;
+
     background:white;
 
 }
@@ -127,6 +128,7 @@ export default function ServicesGrid({ onSelectService }) {
 .services-container{
 
     max-width:1450px;
+
     margin:auto;
 
 }
@@ -134,7 +136,9 @@ export default function ServicesGrid({ onSelectService }) {
 .services-list{
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:35px;
 
 }
@@ -174,6 +178,7 @@ export default function ServicesGrid({ onSelectService }) {
 .service-image img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -249,7 +254,8 @@ export default function ServicesGrid({ onSelectService }) {
     margin-bottom:25px;
 
 }
-    .features{
+
+.features{
 
     list-style:none;
 
@@ -278,6 +284,7 @@ export default function ServicesGrid({ onSelectService }) {
 .feature-dot{
 
     width:10px;
+
     height:10px;
 
     border-radius:50%;
@@ -286,9 +293,7 @@ export default function ServicesGrid({ onSelectService }) {
 
     flex-shrink:0;
 
-}
-
-.service-button{
+}.service-button{
 
     margin-top:auto;
 

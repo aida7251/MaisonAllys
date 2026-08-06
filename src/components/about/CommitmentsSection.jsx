@@ -1,35 +1,35 @@
 import { motion } from "framer-motion";
 import {
+  Ear,
   ShieldCheck,
-  Clock3,
-  HeartHandshake,
-  Sparkles,
+  SearchCheck,
+  UserRound,
 } from "lucide-react";
 
 const commitments = [
   {
+    icon: Ear,
+    title: "Écoute et compréhension",
+    description:
+      "Nous prenons le temps d'échanger avec vous afin de comprendre votre projet, vos préférences, vos contraintes et vos priorités.",
+  },
+  {
     icon: ShieldCheck,
-    title: "Confidentialité absolue",
+    title: "Transparence",
     description:
-      "Chaque échange, chaque demande et chaque information personnelle sont traités avec la plus grande discrétion.",
+      "Les prestations, les étapes de l'accompagnement et les conditions tarifaires vous sont présentées clairement avant toute validation.",
   },
   {
-    icon: Clock3,
-    title: "Disponibilité",
+    icon: SearchCheck,
+    title: "Sélection attentive",
     description:
-      "Notre équipe reste à votre écoute pour répondre rapidement à vos demandes et vous accompagner avec réactivité.",
+      "Les solutions et les prestataires proposés sont recherchés et sélectionnés en fonction des besoins propres à votre projet.",
   },
   {
-    icon: HeartHandshake,
-    title: "Relation de confiance",
+    icon: UserRound,
+    title: "Suivi personnalisé",
     description:
-      "Nous privilégions une relation durable fondée sur l'écoute, la transparence et un accompagnement personnalisé.",
-  },
-  {
-    icon: Sparkles,
-    title: "Excellence au quotidien",
-    description:
-      "Chaque prestation est réalisée avec le même niveau d'exigence afin d'offrir une expérience irréprochable.",
+      "Vous bénéficiez d'un interlocuteur dédié et d'un accompagnement tout au long de la prestation, selon la formule choisie.",
   },
 ];
 
@@ -37,6 +37,7 @@ export default function CommitmentsSection() {
   return (
     <>
       <style>{`
+
       @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
       .commitments{
@@ -50,7 +51,9 @@ export default function CommitmentsSection() {
       .commitments-container{
 
         width:92%;
+
         max-width:1300px;
+
         margin:auto;
 
       }
@@ -59,7 +62,7 @@ export default function CommitmentsSection() {
 
         text-align:center;
 
-        max-width:760px;
+        max-width:820px;
 
         margin:0 auto 80px;
 
@@ -99,7 +102,9 @@ export default function CommitmentsSection() {
 
         color:#4B3222;
 
-        margin-bottom:24px;
+        line-height:1.15;
+
+        margin-bottom:28px;
 
       }
 
@@ -109,7 +114,7 @@ export default function CommitmentsSection() {
 
         font-size:1.08rem;
 
-        line-height:1.9;
+        line-height:2;
 
       }
 
@@ -121,13 +126,15 @@ export default function CommitmentsSection() {
 
         gap:30px;
 
+        margin-top:70px;
+
       }
 
       .commitment-card{
 
         background:white;
 
-        padding:40px;
+        padding:42px;
 
         border-radius:28px;
 
@@ -237,9 +244,7 @@ export default function CommitmentsSection() {
 
       }
 
-      `}</style>
-
-      <section className="commitments">
+      `}</style>      <section className="commitments">
 
         <div className="commitments-container">
 
@@ -259,16 +264,16 @@ export default function CommitmentsSection() {
 
             <h2 className="commitments-title">
 
-              Une promesse de qualité,
-              à chaque instant.
+              Une relation claire
+              et attentive à chaque étape.
 
             </h2>
 
             <p className="commitments-description">
 
-              Au-delà des prestations, Maison Allys s'engage à offrir
-              une qualité de service constante, fondée sur l'écoute,
-              la confiance et l'excellence.
+              Au-delà de nos prestations, Maison Allys
+              s'engage à vous offrir un accompagnement
+              sérieux, personnalisé et transparent.
 
             </p>
 
@@ -276,11 +281,11 @@ export default function CommitmentsSection() {
 
           <div className="commitments-grid">
 
-            {commitments.map((item,index)=>{
+            {commitments.map((item, index) => {
 
-              const Icon=item.icon;
+              const Icon = item.icon;
 
-              return(
+              return (
 
                 <motion.div
 
@@ -294,7 +299,7 @@ export default function CommitmentsSection() {
 
                   transition={{
                     duration:.6,
-                    delay:index*.12
+                    delay:index * .12
                   }}
 
                   viewport={{ once:true }}
@@ -303,7 +308,7 @@ export default function CommitmentsSection() {
 
                   <div className="commitment-icon">
 
-                    <Icon size={34}/>
+                    <Icon size={34} />
 
                   </div>
 

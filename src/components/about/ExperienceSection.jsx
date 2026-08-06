@@ -1,38 +1,40 @@
 import { motion } from "framer-motion";
 import {
+  UserRound,
+  Ear,
   Sparkles,
   Clock3,
- Users,
-  ShieldCheck
 } from "lucide-react";
 
 const stats = [
   {
-    icon: Clock3,
-    value: "24/7",
-    label: "Disponibilité"
+    icon: UserRound,
+    value: "Un interlocuteur dédié",
+    label: "Un suivi humain tout au long de votre projet.",
   },
   {
-    icon: Users,
-    value: "100%",
-    label: "Accompagnement personnalisé"
-  },
-  {
-    icon: ShieldCheck,
-    value: "Confidentiel",
-    label: "Discrétion absolue"
+    icon: Ear,
+    value: "Une écoute attentive",
+    label: "Des propositions fondées sur vos véritables attentes.",
   },
   {
     icon: Sparkles,
-    value: "Premium",
-    label: "Expérience d'exception"
-  }
+    value: "Un service sur mesure",
+    label: "Un accompagnement adapté à vos besoins et à votre budget.",
+  },
+  {
+    icon: Clock3,
+    value: "Un véritable gain de temps",
+    label: "Les recherches et l'organisation sont prises en charge pour vous.",
+  },
 ];
 
 export default function ExperienceSection() {
+
   return (
     <>
       <style>{`
+
       @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
       .experience{
@@ -46,7 +48,9 @@ export default function ExperienceSection() {
       .experience-container{
 
         width:92%;
+
         max-width:1350px;
+
         margin:auto;
 
         display:grid;
@@ -129,7 +133,7 @@ export default function ExperienceSection() {
 
       .experience-content{
 
-        max-width:560px;
+        max-width:600px;
 
       }
 
@@ -163,11 +167,11 @@ export default function ExperienceSection() {
 
         font-size:3.8rem;
 
-        line-height:1.08;
+        line-height:1.1;
 
         color:#4B3222;
 
-        margin-bottom:26px;
+        margin-bottom:28px;
 
       }
 
@@ -197,7 +201,7 @@ export default function ExperienceSection() {
 
         background:#FDFBF8;
 
-        padding:28px;
+        padding:30px;
 
         border-radius:24px;
 
@@ -241,11 +245,13 @@ export default function ExperienceSection() {
 
         font-family:'Cormorant Garamond',serif;
 
-        font-size:1.9rem;
+        font-size:1.55rem;
 
         color:#4B3222;
 
-        margin-bottom:8px;
+        line-height:1.35;
+
+        margin-bottom:10px;
 
       }
 
@@ -253,7 +259,7 @@ export default function ExperienceSection() {
 
         color:#6D5A4D;
 
-        line-height:1.7;
+        line-height:1.8;
 
       }
 
@@ -321,37 +327,36 @@ export default function ExperienceSection() {
 
       }
 
-      `}</style>
-
-      <section className="experience">
+      `}</style>      <section className="experience">
 
         <div className="experience-container">
 
           <motion.div
             className="experience-image"
-            initial={{opacity:0,x:-60}}
-            whileInView={{opacity:1,x:0}}
-            viewport={{once:true}}
-            transition={{duration:.8}}
+            initial={{ opacity:0, x:-60 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.8 }}
           >
 
             <img
               src="/images/experience.jpg"
-              alt="Maison Allys"
+              alt="L'expérience Maison Allys"
             />
 
             <div className="floating">
 
               <h3>
 
-                Chaque détail compte.
+                Chaque projet compte.
 
               </h3>
 
               <p>
 
-                Nous imaginons des expériences où l'élégance,
-                la discrétion et l'excellence deviennent naturelles.
+                Nous prenons soin de vos projets
+                avec la même attention que s'ils
+                étaient les nôtres.
 
               </p>
 
@@ -361,10 +366,10 @@ export default function ExperienceSection() {
 
           <motion.div
             className="experience-content"
-            initial={{opacity:0,x:60}}
-            whileInView={{opacity:1,x:0}}
-            viewport={{once:true}}
-            transition={{duration:.8}}
+            initial={{ opacity:0, x:60 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.8 }}
           >
 
             <div className="experience-badge">
@@ -376,36 +381,44 @@ export default function ExperienceSection() {
             <h2 className="experience-title">
 
               Plus qu'un service,
-              une manière de vivre.
+              un accompagnement de confiance.
 
             </h2>
 
             <p className="experience-text">
 
-              Chez Maison Allys, nous croyons que le véritable luxe
-              réside dans la simplicité. Notre rôle est d'anticiper,
-              d'organiser et de prendre soin de chaque détail afin
-              que vous puissiez profiter pleinement de votre temps
-              et de vos moments les plus précieux.
+              Chez Maison Allys, nous croyons que le véritable
+              gain de temps ne consiste pas seulement à déléguer
+              une tâche, mais à pouvoir confier son projet à une
+              personne qui l'écoute, le comprend et en prend soin.
+
+            </p>
+
+            <p className="experience-text">
+
+              Notre rôle est de rechercher, comparer, organiser
+              et coordonner les différentes étapes, tout en vous
+              laissant libre de valider les solutions qui vous
+              correspondent.
 
             </p>
 
             <div className="stats">
 
-              {stats.map((item)=>{
+              {stats.map((item) => {
 
-                const Icon=item.icon;
+                const Icon = item.icon;
 
-                return(
+                return (
 
                   <div
-                    key={item.label}
+                    key={item.value}
                     className="stat"
                   >
 
                     <div className="stat-icon">
 
-                      <Icon size={28}/>
+                      <Icon size={28} />
 
                     </div>
 

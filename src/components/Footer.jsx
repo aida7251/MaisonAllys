@@ -1,448 +1,438 @@
-// import {
-//   Instagram,
-//   Facebook,
-//   Linkedin,
-//   Mail,
-//   Phone,
-//   MapPin,
-//   ArrowUp
-// } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUp
+} from "lucide-react";
+
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
 
   const scrollTop = () => {
 
     window.scrollTo({
+
       top:0,
+
       behavior:"smooth"
+
     });
 
   };
 
-  return (
+  return(
 
     <>
 
-      <style>{`
+<style>{`
 
-      .footer{
+.footer{
 
-        background:#2F2118;
-        color:white;
-        padding:100px 7% 40px;
+background:#2F2118;
 
-      }
+color:white;
 
-      .footer-container{
+padding:90px 7% 35px;
 
-        max-width:1400px;
-        margin:auto;
+}
 
-        display:grid;
-        grid-template-columns:2fr 1fr 1fr 1.5fr;
-        gap:70px;
+.footer-container{
 
-      }
+max-width:1400px;
 
-      .footer-logo{
+margin:auto;
 
-        font-family:'Cormorant Garamond',serif;
-        font-size:2.5rem;
-        margin-bottom:20px;
+display:grid;
 
-      }
+grid-template-columns:2fr 1fr 1fr;
 
-      .footer-logo span{
+gap:70px;
 
-        color:#B75C3B;
+}
 
-      }
+.footer-logo{
 
-      .footer-description{
+width:220px;
 
-        color:rgba(255,255,255,.75);
-        line-height:1.9;
-        margin-bottom:30px;
+margin-bottom:25px;
 
-      }
+}
 
-      .socials{
+.footer-description{
 
-        display:flex;
-        gap:15px;
+color:rgba(255,255,255,.75);
 
-      }
+line-height:1.9;
 
-      .social{
+max-width:430px;
 
-        width:48px;
-        height:48px;
+margin-bottom:30px;
 
-        border-radius:50%;
+}
 
-        background:rgba(255,255,255,.08);
+.socials{
 
-        display:flex;
-        justify-content:center;
-        align-items:center;
+display:flex;
 
-        transition:.35s;
+flex-wrap:wrap;
 
-        cursor:pointer;
+gap:12px;
 
-      }
+}
 
-      .social:hover{
+.social-link{
 
-        background:#B75C3B;
-        transform:translateY(-4px);
+padding:10px 18px;
 
-      }
+border:1px solid rgba(255,255,255,.15);
 
-      .footer h3{
+border-radius:999px;
 
-        margin-bottom:25px;
-        font-size:1.3rem;
+color:white;
 
-      }
+text-decoration:none;
 
-      .footer-links{
+background:rgba(255,255,255,.05);
 
-        display:flex;
-        flex-direction:column;
-        gap:18px;
+transition:.35s;
 
-      }
+font-size:.9rem;
 
-      .footer-links a{
+}
 
-        color:rgba(255,255,255,.75);
-        transition:.3s;
+.social-link:hover{
 
-      }
+background:#B75C3B;
 
-      .footer-links a:hover{
+border-color:#B75C3B;
 
-        color:white;
-        padding-left:8px;
+}
 
-      }
+.footer h3{
 
-      .contact-item{
+margin-bottom:24px;
 
-        display:flex;
-        gap:15px;
-        margin-bottom:22px;
+font-size:1.25rem;
 
-        color:rgba(255,255,255,.75);
+}.footer-links{
 
-      }
+display:flex;
 
-      .contact-item svg{
+flex-direction:column;
 
-        color:#B75C3B;
-        min-width:20px;
+gap:16px;
 
-      }
+}
 
-      .newsletter{
+.footer-links a{
 
-        margin-top:25px;
+color:rgba(255,255,255,.75);
 
-      }
+text-decoration:none;
 
-      .newsletter input{
+transition:.3s;
 
-        width:100%;
+}
 
-        padding:15px 18px;
+.footer-links a:hover{
 
-        border:none;
-        outline:none;
+color:white;
 
-        border-radius:50px;
+padding-left:6px;
 
-        margin-bottom:15px;
+}
 
-      }
+.contact-item{
 
-      .newsletter button{
+display:flex;
 
-        width:100%;
+align-items:flex-start;
 
-        padding:15px;
+gap:14px;
 
-        border:none;
+margin-bottom:20px;
 
-        border-radius:50px;
+color:rgba(255,255,255,.75);
 
-        background:#B75C3B;
+}
 
-        color:white;
+.contact-item svg{
 
-        cursor:pointer;
+color:#B75C3B;
 
-        transition:.3s;
+flex-shrink:0;
 
-      }
+margin-top:3px;
 
-      .newsletter button:hover{
+}
 
-        background:#9B472C;
+.footer-bottom{
 
-      }
+margin-top:60px;
 
-      .footer-bottom{
+padding-top:30px;
 
-        margin-top:70px;
+border-top:1px solid rgba(255,255,255,.1);
 
-        padding-top:35px;
+display:flex;
 
-        border-top:1px solid rgba(255,255,255,.1);
+justify-content:space-between;
 
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
+align-items:center;
 
-      }
+}
 
-      .footer-bottom p{
+.footer-bottom p{
 
-        color:rgba(255,255,255,.6);
+color:rgba(255,255,255,.6);
 
-      }
+font-size:.95rem;
 
-      .back-top{
+}
 
-        width:55px;
-        height:55px;
+.back-top{
 
-        border-radius:50%;
+width:52px;
 
-        background:#B75C3B;
+height:52px;
 
-        display:flex;
-        justify-content:center;
-        align-items:center;
+border-radius:50%;
 
-        cursor:pointer;
+background:#B75C3B;
 
-        transition:.35s;
+display:flex;
 
-      }
+justify-content:center;
 
-      .back-top:hover{
+align-items:center;
 
-        transform:translateY(-5px);
+cursor:pointer;
 
-      }
+transition:.35s;
 
-      @media(max-width:1100px){
+}
 
-        .footer-container{
+.back-top:hover{
 
-          grid-template-columns:1fr 1fr;
+transform:translateY(-5px);
 
-        }
+background:#C86A45;
 
-      }
+}
 
-      @media(max-width:700px){
+@media(max-width:950px){
 
-        .footer{
+.footer-container{
 
-          padding:80px 6% 35px;
+grid-template-columns:1fr;
 
-        }
+gap:50px;
 
-        .footer-container{
+}
 
-          grid-template-columns:1fr;
+}
 
-          gap:45px;
+@media(max-width:768px){
 
-        }
+.footer{
 
-        .footer-bottom{
+padding:70px 6% 30px;
 
-          flex-direction:column;
-          gap:25px;
+}
 
-        }
+.footer-bottom{
 
-      }
+flex-direction:column;
 
-      `}</style>
+gap:20px;
 
-      <footer className="footer" id="contact">
+text-align:center;
 
-        <div className="footer-container">
+}
 
-          <div>
+}
 
-            <h2 className="footer-logo">
+`}</style>
 
-              MAISON <span>ALLYS</span>
+<footer className="footer">
 
-            </h2>
+<div className="footer-container"><div>
 
-            <p className="footer-description">
+<img
+  src="/images/marron.png"
+  alt="Maison Allys"
+  className="footer-logo"
+/>
 
-              Votre maison de services lifestyle.
-              Nous simplifions votre quotidien grâce à
-              un accompagnement personnalisé, discret
-              et haut de gamme.
+<p className="footer-description">
 
-            </p>
+Maison Allys vous accompagne dans
+l'organisation de vos voyages,
+événements, recherches de prestataires
+et demandes personnalisées avec une
+approche humaine, attentive et sur mesure.
 
-            <div className="socials">
+</p>
 
-              <div className="social">
+<div className="socials">
 
-                <Instagram/>
+<a
+href="https://www.instagram.com/maisonallys"
+target="_blank"
+rel="noopener noreferrer"
+className="social-link"
+>
 
-              </div>
+Instagram
 
-              <div className="social">
+</a>
 
-                <Facebook/>
+<a
+href="https://www.facebook.com/maisonallys"
+target="_blank"
+rel="noopener noreferrer"
+className="social-link"
+>
 
-              </div>
+Facebook
 
-              <div className="social">
+</a>
 
-                <Linkedin/>
+<a
+href="https://www.tiktok.com/@maisonallys"
+target="_blank"
+rel="noopener noreferrer"
+className="social-link"
+>
 
-              </div>
+TikTok
 
-            </div>
+</a>
 
-          </div>
+</div>
 
-          <div>
+</div>
 
-            <h3>
+<div>
 
-              Navigation
+<h3>
 
-            </h3>
+Navigation
 
-            <div className="footer-links">
+</h3>
 
-              <a href="#presentation">La Maison</a>
+<div className="footer-links">
 
-              <a href="#services">Services</a>
+<NavLink to="/">
 
-              <a href="#process">Comment ça marche</a>
+Accueil
 
-              <a href="#testimonials">Témoignages</a>
+</NavLink>
 
-            </div>
+<NavLink to="/a-propos">
 
-          </div>
+À propos
 
-          <div>
+</NavLink>
 
-            <h3>
+<NavLink to="/services">
 
-              Contact
+Services
 
-            </h3>
+</NavLink>
 
-            <div className="contact-item">
+<NavLink to="/comment-ca-marche">
 
-              <MapPin size={20}/>
+Comment ça marche
 
-              <span>Dakar, Sénégal</span>
+</NavLink>
 
-            </div>
+<NavLink to="/contact">
 
-            <div className="contact-item">
+Contact
 
-              <Phone size={20}/>
+</NavLink>
 
-              <span>+221 XX XXX XX XX</span>
+</div>
 
-            </div>
+</div>
 
-            <div className="contact-item">
+<div>
 
-              <Mail size={20}/>
+<h3>
 
-              <span>contact@maisonallys.com</span>
+Contact
 
-            </div>
+</h3>
 
-          </div>
+<div className="contact-item">
 
-          <div>
+<MapPin size={20}/>
 
-            <h3>
+<span>
 
-              Newsletter
+Dakar, Sénégal
 
-            </h3>
+</span>
 
-            <p
-            style={{
-              color:"rgba(255,255,255,.75)",
-              lineHeight:"1.8",
-              marginBottom:"20px"
-            }}>
+</div>
 
-              Recevez nos nouveautés et inspirations lifestyle.
+<div className="contact-item">
 
-            </p>
+<Phone size={20}/>
 
-            <div className="newsletter">
+<span>
 
-              <input
++221 XX XXX XX XX
 
-                type="email"
+</span>
 
-                placeholder="Votre adresse e-mail"
+</div>
 
-              />
+<div className="contact-item">
 
-              <button>
+<Mail size={20}/>
 
-                S'abonner
+<span>
 
-              </button>
+contact@maisonallys.com
 
-            </div>
+</span>
 
-          </div>
+</div>
 
-        </div>
+</div>
 
-        <div className="footer-bottom">
+</div>
 
-          <p>
+<div className="footer-bottom">
 
-            © {new Date().getFullYear()} Maison Allys.
-            Tous droits réservés.
+  <p>
 
-          </p>
+    © {new Date().getFullYear()} Maison Allys.
+    Tous droits réservés.
 
-          <div
+  </p>
 
-            className="back-top"
+  <div
 
-            onClick={scrollTop}
+    className="back-top"
 
-          >
+    onClick={scrollTop}
 
-            <ArrowUp/>
+  >
 
-          </div>
+    <ArrowUp size={22}/>
 
-        </div>
+  </div>
 
-      </footer>
+</div>
 
-    </>
+</footer>
 
-  );
+</>
+
+);
 
 }

@@ -48,14 +48,16 @@ export default function Navbar() {
 
   return (
     <>
-      <style>{`
+    <style>{`
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 *{
 
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
 
 }
@@ -63,8 +65,11 @@ box-sizing:border-box;
 body{
 
 font-family:'Inter',sans-serif;
+
 background:#FBEEDA;
+
 color:#4B3222;
+
 overflow-x:hidden;
 
 }
@@ -80,11 +85,12 @@ text-decoration:none;
 position:fixed;
 
 top:0;
+
 left:0;
 
 width:100%;
 
-padding:22px 0;
+padding:18px 0;
 
 z-index:9999;
 
@@ -100,31 +106,69 @@ box-shadow:${scrolled ? "0 10px 35px rgba(0,0,0,.08)" : "none"};
 
 .container{
 
-width:92%;
-max-width:1400px;
-margin:auto;
+width:100%;
+
+max-width:none;
+
+padding:0 30px;
 
 display:flex;
-justify-content:space-between;
+
 align-items:center;
+
+justify-content:space-between;
 
 }
 
 .logo{
 
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+text-decoration:none;
+
+margin-right:auto;
+
+}
+
+.logo-image{
+
+width:110px;
+
+height:110px;
+
+object-fit:contain;
+
+transform:scale(1.25);
+
+transform-origin:left center;
+
+margin-left:-18px;
+
+flex-shrink:0;
+
+}
+
+.logo-text{
+
 font-family:'Cormorant Garamond',serif;
 
 font-size:2rem;
 
-font-weight:700;
+font-weight:600;
 
-letter-spacing:4px;
+line-height:1;
 
 color:#4B3222;
 
+white-space:nowrap;
+
 }
 
-.logo span{
+.logo-text span{
 
 color:#B75C3B;
 
@@ -160,9 +204,9 @@ content:"";
 
 position:absolute;
 
-bottom:-8px;
-
 left:0;
+
+bottom:-8px;
 
 width:0;
 
@@ -204,7 +248,7 @@ width:100%;
 
 padding:14px 30px;
 
-border-radius:50px;
+border-radius:999px;
 
 background:#B75C3B;
 
@@ -238,6 +282,24 @@ z-index:10001;
 
 @media(max-width:980px){
 
+.logo-image{
+
+width:80px;
+
+height:80px;
+
+transform:scale(1.1);
+
+margin-left:-8px;
+
+}
+
+.logo-text{
+
+font-size:1.6rem;
+
+}
+
 .menu{
 
 display:block;
@@ -254,13 +316,13 @@ nav{
 
 position:fixed;
 
-top:84px;
+top:90px;
 
 left:${menuOpen ? "0" : "-100%"};
 
 width:100%;
 
-height:calc(100vh - 84px);
+height:calc(100vh - 90px);
 
 background:#FBEEDA;
 
@@ -286,15 +348,27 @@ font-size:1.2rem;
 
 }
 
-      `}</style>      <header className="navbar">
+`}</style>     <header className="navbar">
         <div className="container">
 
-          <NavLink
-            to="/"
-            className="logo"
-          >
-            MAISON <span>ALLYS</span>
-          </NavLink>
+         <NavLink
+  to="/"
+  className="logo"
+>
+
+  <img
+    src="/images/logo.png"
+    alt="Maison Allys"
+    className="logo-image"
+  />
+
+  <div className="logo-text">
+
+    MAISON <span>ALLYS</span>
+
+  </div>
+
+</NavLink>
 
           <nav>
 

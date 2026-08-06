@@ -5,17 +5,17 @@ const values = [
   {
     icon: Eye,
     title: "Notre vision",
-    text: "Réinventer la conciergerie en offrant un accompagnement humain, élégant et personnalisé où chaque détail contribue à une expérience d'exception."
+    text: "Devenir une maison de services lifestyle de confiance, reconnue pour la qualité de son accompagnement, sa proximité et sa capacité à simplifier le quotidien de ses clients."
   },
   {
     icon: Compass,
     title: "Notre mission",
-    text: "Vous faire gagner un temps précieux en prenant en charge vos demandes avec efficacité, discrétion et excellence."
+    text: "Vous faire gagner un temps précieux en recherchant, organisant et coordonnant les solutions adaptées à vos voyages, événements et demandes personnalisées."
   },
   {
     icon: Gem,
     title: "Notre promesse",
-    text: "Transformer chaque besoin en une expérience fluide grâce à une sélection exigeante de partenaires et un accompagnement sur mesure."
+    text: "Prendre soin de chaque projet avec attention et vous accompagner avec clarté, implication et transparence, de la première prise de contact jusqu'à sa réalisation."
   }
 ];
 
@@ -37,14 +37,16 @@ export default function VisionSection() {
       .vision-container{
 
         width:92%;
+
         max-width:1300px;
+
         margin:auto;
 
       }
 
       .vision-header{
 
-        max-width:760px;
+        max-width:820px;
 
         margin:0 auto 80px;
 
@@ -84,9 +86,11 @@ export default function VisionSection() {
 
         font-size:3.8rem;
 
+        line-height:1.15;
+
         color:#4B3222;
 
-        margin-bottom:24px;
+        margin-bottom:28px;
 
       }
 
@@ -94,7 +98,7 @@ export default function VisionSection() {
 
         color:#6D5A4D;
 
-        line-height:1.9;
+        line-height:2;
 
         font-size:1.08rem;
 
@@ -107,6 +111,8 @@ export default function VisionSection() {
         grid-template-columns:repeat(3,1fr);
 
         gap:30px;
+
+        margin-top:70px;
 
       }
 
@@ -137,10 +143,13 @@ export default function VisionSection() {
       .vision-icon{
 
         width:74px;
+
         height:74px;
 
         display:flex;
+
         align-items:center;
+
         justify-content:center;
 
         border-radius:20px;
@@ -209,18 +218,16 @@ export default function VisionSection() {
 
       }
 
-      `}</style>
-
-      <section className="vision">
+      `}</style>      <section className="vision">
 
         <div className="vision-container">
 
           <motion.div
             className="vision-header"
-            initial={{opacity:0,y:40}}
-            whileInView={{opacity:1,y:0}}
-            viewport={{once:true}}
-            transition={{duration:.7}}
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.7 }}
           >
 
             <div className="vision-badge">
@@ -231,17 +238,29 @@ export default function VisionSection() {
 
             <h2 className="vision-title">
 
-              Bien plus qu'un service,
-              une véritable signature.
+              Une maison pensée
+              pour prendre soin
+              de vos projets.
 
             </h2>
 
             <p className="vision-description">
 
-              Maison Allys accompagne celles et ceux qui recherchent
-              davantage qu'une simple conciergerie. Notre ambition est
-              de créer une relation durable fondée sur la confiance,
-              la discrétion et l'excellence.
+              Maison Allys accompagne celles et ceux qui
+              souhaitent concrétiser leurs projets plus
+              sereinement et consacrer leur temps à ce qui
+              compte véritablement.
+
+            </p>
+
+            <p className="vision-description">
+
+              Notre approche repose sur une relation
+              humaine, attentive et durable. Chaque
+              demande est accueillie avec écoute et
+              étudiée avec soin afin de proposer un
+              accompagnement adapté à vos envies,
+              à vos contraintes et à votre budget.
 
             </p>
 
@@ -249,11 +268,11 @@ export default function VisionSection() {
 
           <div className="vision-grid">
 
-            {values.map((item,index)=>{
+            {values.map((item, index) => {
 
-              const Icon=item.icon;
+              const Icon = item.icon;
 
-              return(
+              return (
 
                 <motion.div
 
@@ -261,22 +280,22 @@ export default function VisionSection() {
 
                   className="vision-card"
 
-                  initial={{opacity:0,y:40}}
+                  initial={{ opacity:0, y:40 }}
 
-                  whileInView={{opacity:1,y:0}}
+                  whileInView={{ opacity:1, y:0 }}
 
-                  viewport={{once:true}}
+                  viewport={{ once:true }}
 
                   transition={{
                     duration:.6,
-                    delay:index*.15
+                    delay:index * .15
                   }}
 
                 >
 
                   <div className="vision-icon">
 
-                    <Icon size={34}/>
+                    <Icon size={34} />
 
                   </div>
 

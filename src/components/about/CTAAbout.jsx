@@ -14,29 +14,65 @@ export default function CTAAbout() {
 
         overflow:hidden;
 
-        padding:160px 0;
+        min-height:720px;
 
-        background:linear-gradient(135deg,#4B3222 0%,#6C4733 100%);
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
 
       }
 
-      .cta-about::before{
-
-        content:"";
+      .cta-background{
 
         position:absolute;
 
         inset:0;
 
-        background:
-          radial-gradient(circle at top right,rgba(255,255,255,.08),transparent 30%),
-          radial-gradient(circle at bottom left,rgba(183,92,59,.18),transparent 35%);
+        width:100%;
+
+        height:100%;
+
+        object-fit:cover;
+
+        object-position:center center;
+
+        z-index:0;
+
+        transition:transform .8s;
+
+      }
+
+      .cta-about:hover .cta-background{
+
+        transform:scale(1.04);
+
+      }
+
+      .cta-overlay{
+
+        position:absolute;
+
+        inset:0;
+
+        background:linear-gradient(
+
+          rgba(32,22,16,.55),
+
+          rgba(32,22,16,.55)
+
+        );
+
+        z-index:1;
 
       }
 
       .cta-container{
 
         position:relative;
+
+        z-index:2;
 
         width:92%;
 
@@ -62,9 +98,9 @@ export default function CTAAbout() {
 
         border-radius:999px;
 
-        background:rgba(255,255,255,.12);
+        background:rgba(255,255,255,.15);
 
-        border:1px solid rgba(255,255,255,.15);
+        border:1px solid rgba(255,255,255,.20);
 
         backdrop-filter:blur(12px);
 
@@ -76,7 +112,7 @@ export default function CTAAbout() {
 
         text-transform:uppercase;
 
-        margin-bottom:28px;
+        margin-bottom:30px;
 
       }
 
@@ -85,8 +121,6 @@ export default function CTAAbout() {
         font-family:'Cormorant Garamond',serif;
 
         font-size:4.5rem;
-
-        font-weight:600;
 
         line-height:1.1;
 
@@ -104,11 +138,9 @@ export default function CTAAbout() {
 
         line-height:2;
 
-        color:rgba(255,255,255,.88);
+        color:rgba(255,255,255,.92);
 
-      }
-
-      .cta-buttons{
+      }      .cta-buttons{
 
         display:flex;
 
@@ -168,11 +200,13 @@ export default function CTAAbout() {
 
         border:1px solid rgba(255,255,255,.35);
 
+        background:rgba(255,255,255,.08);
+
+        backdrop-filter:blur(10px);
+
         color:white;
 
         text-decoration:none;
-
-        backdrop-filter:blur(10px);
 
         transition:.35s;
 
@@ -182,7 +216,7 @@ export default function CTAAbout() {
 
         transform:translateY(-5px);
 
-        background:rgba(255,255,255,.08);
+        background:rgba(255,255,255,.18);
 
       }
 
@@ -190,11 +224,11 @@ export default function CTAAbout() {
 
         margin-top:70px;
 
-        color:rgba(255,255,255,.65);
+        color:rgba(255,255,255,.75);
 
-        font-size:.95rem;
+        font-size:1rem;
 
-        letter-spacing:.5px;
+        line-height:1.8;
 
       }
 
@@ -202,7 +236,9 @@ export default function CTAAbout() {
 
         .cta-about{
 
-          padding:110px 0;
+          min-height:620px;
+
+          padding:90px 0;
 
         }
 
@@ -225,6 +261,7 @@ export default function CTAAbout() {
         }
 
         .btn-primary,
+
         .btn-secondary{
 
           justify-content:center;
@@ -235,17 +272,23 @@ export default function CTAAbout() {
 
       }
 
-      `}</style>
+      `}</style>      <section className="cta-about">
 
-      <section className="cta-about">
+        <img
+          src="/images/cta-about.jpg"
+          alt="Maison Allys"
+          className="cta-background"
+        />
+
+        <div className="cta-overlay"></div>
 
         <div className="cta-container">
 
           <motion.div
-            initial={{opacity:0,y:40}}
-            whileInView={{opacity:1,y:0}}
-            transition={{duration:.8}}
-            viewport={{once:true}}
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            transition={{ duration:.8 }}
+            viewport={{ once:true }}
           >
 
             <div className="cta-badge">
@@ -256,17 +299,21 @@ export default function CTAAbout() {
 
             <h2 className="cta-title">
 
-              Offrez-vous
-              le luxe du temps.
+              Confiez-nous vos projets,
+              profitez pleinement
+              de l'essentiel.
 
             </h2>
 
             <p className="cta-text">
 
-              Découvrez une nouvelle manière de vivre votre quotidien.
-              Notre équipe vous accompagne avec discrétion, élégance
-              et exigence afin que chaque instant soit consacré à
-              l'essentiel.
+              Voyage, événement, surprise,
+              recherche de prestataire ou
+              demande particulière :
+              Maison Allys vous accompagne
+              avec attention pour transformer
+              vos idées en projets
+              soigneusement organisés.
 
             </p>
 
@@ -279,7 +326,7 @@ export default function CTAAbout() {
 
                 Découvrir nos services
 
-                <ArrowRight size={20}/>
+                <ArrowRight size={20} />
 
               </NavLink>
 
@@ -288,7 +335,7 @@ export default function CTAAbout() {
                 className="btn-secondary"
               >
 
-                <Phone size={20}/>
+                <Phone size={20} />
 
                 Nous contacter
 
@@ -298,8 +345,9 @@ export default function CTAAbout() {
 
             <div className="cta-footer">
 
-              Maison Allys • Une conciergerie privée pensée pour celles
-              et ceux qui recherchent l'excellence.
+              Maison Allys • Une maison de services lifestyle
+              pensée pour vous faire gagner du temps et
+              prendre soin des projets qui comptent.
 
             </div>
 
@@ -310,5 +358,7 @@ export default function CTAAbout() {
       </section>
 
     </>
+
   );
+
 }

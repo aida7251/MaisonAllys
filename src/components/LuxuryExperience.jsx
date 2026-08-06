@@ -2,21 +2,22 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Clock3, Sparkles } from "lucide-react";
 
 export default function LuxuryExperience() {
+
   const features = [
     {
       icon: <ShieldCheck size={34} />,
-      title: "Discrétion absolue",
-      text: "Chaque demande est traitée avec confidentialité, professionnalisme et élégance.",
+      title: "Une écoute attentive",
+      text: "Nous prenons le temps de comprendre vos attentes, vos préférences, vos contraintes et votre budget.",
     },
     {
       icon: <Clock3 size={34} />,
-      title: "Un temps précieux",
-      text: "Nous nous occupons de l'organisation afin que vous puissiez profiter pleinement de votre temps.",
+      title: "Un véritable gain de temps",
+      text: "Nous effectuons les recherches, comparons les solutions et coordonnons les différentes étapes à votre place.",
     },
     {
       icon: <Sparkles size={34} />,
-      title: "Sur mesure",
-      text: "Chaque prestation est adaptée à vos envies et à votre style de vie.",
+      title: "Un service sur mesure",
+      text: "Chaque proposition est construite spécialement pour vous. Vous choisissez librement les solutions qui vous correspondent.",
     },
   ];
 
@@ -24,9 +25,12 @@ export default function LuxuryExperience() {
     <>
       <style>{`
 
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
       .luxury{
 
         background:#FBEEDA;
+
         padding:140px 7%;
 
       }
@@ -34,11 +38,15 @@ export default function LuxuryExperience() {
       .luxury-container{
 
         max-width:1400px;
+
         margin:auto;
 
         display:grid;
+
         grid-template-columns:1fr 1fr;
-        gap:80px;
+
+        gap:90px;
+
         align-items:center;
 
       }
@@ -46,16 +54,23 @@ export default function LuxuryExperience() {
       .luxury-image{
 
         overflow:hidden;
-        border-radius:30px;
-        box-shadow:0 25px 70px rgba(0,0,0,.12);
+
+        border-radius:34px;
+
+        box-shadow:0 30px 80px rgba(0,0,0,.12);
 
       }
 
       .luxury-image img{
 
         width:100%;
-        height:700px;
+
+        height:760px;
+
         object-fit:cover;
+
+        display:block;
+
         transition:.7s;
 
       }
@@ -68,80 +83,115 @@ export default function LuxuryExperience() {
 
       .luxury-subtitle{
 
+        display:inline-block;
+
+        margin-bottom:22px;
+
         color:#B75C3B;
-        letter-spacing:4px;
+
         text-transform:uppercase;
+
+        letter-spacing:3px;
+
+        font-size:.9rem;
+
         font-weight:600;
-        margin-bottom:18px;
 
       }
 
       .luxury-title{
 
         font-family:'Cormorant Garamond',serif;
+
         font-size:4rem;
+
+        line-height:1.1;
+
         color:#4B3222;
+
         margin-bottom:30px;
-        line-height:1.15;
 
       }
 
       .luxury-description{
 
-        color:#6F6258;
-        line-height:1.9;
-        margin-bottom:45px;
-        font-size:1.05rem;
+        font-family:'Inter',sans-serif;
+
+        color:#6D5A4D;
+
+        font-size:1.08rem;
+
+        line-height:2;
+
+        margin-bottom:50px;
 
       }
 
       .feature{
 
         display:flex;
-        gap:25px;
+
+        gap:24px;
+
         margin-bottom:35px;
+
+      }
+
+      .feature:last-child{
+
+        margin-bottom:0;
 
       }
 
       .feature-icon{
 
-        width:70px;
-        height:70px;
-        min-width:70px;
+        width:72px;
+
+        height:72px;
+
+        min-width:72px;
 
         border-radius:50%;
 
         background:white;
+
         color:#B75C3B;
 
         display:flex;
+
         justify-content:center;
+
         align-items:center;
 
-        box-shadow:0 10px 30px rgba(0,0,0,.08);
+        box-shadow:0 12px 35px rgba(0,0,0,.08);
 
       }
 
       .feature h3{
 
-        color:#4B3222;
-        margin-bottom:10px;
         font-size:1.3rem;
+
+        color:#4B3222;
+
+        margin-bottom:10px;
 
       }
 
       .feature p{
 
-        color:#6F6258;
-        line-height:1.8;
+        color:#6D5A4D;
+
+        line-height:1.9;
 
       }
 
-      @media(max-width:1000px){
+      @media(max-width:1100px){
 
         .luxury-container{
 
           grid-template-columns:1fr;
+
+          gap:60px;
 
         }
 
@@ -175,7 +225,7 @@ export default function LuxuryExperience() {
 
         .luxury-image img{
 
-          height:420px;
+          height:450px;
 
         }
 
@@ -187,60 +237,60 @@ export default function LuxuryExperience() {
 
       }
 
-      `}</style>
-
-      <section className="luxury">
+      `}</style>      <section className="luxury">
 
         <div className="luxury-container">
 
           <motion.div
-            initial={{opacity:0,x:-60}}
-            whileInView={{opacity:1,x:0}}
-            transition={{duration:.8}}
-            viewport={{once:true}}
             className="luxury-image"
+            initial={{ opacity:0, x:-60 }}
+            whileInView={{ opacity:1, x:0 }}
+            transition={{ duration:.8 }}
+            viewport={{ once:true }}
           >
 
             <img
-              src="/images/hero-home.png"
-              alt="Maison Allys"
+              src="/images/accompagnement.jpg"
+              alt="Accompagnement personnalisé Maison Allys"
             />
 
           </motion.div>
 
           <motion.div
-            initial={{opacity:0,x:60}}
-            whileInView={{opacity:1,x:0}}
-            transition={{duration:.8}}
-            viewport={{once:true}}
+            initial={{ opacity:0, x:60 }}
+            whileInView={{ opacity:1, x:0 }}
+            transition={{ duration:.8 }}
+            viewport={{ once:true }}
           >
 
             <p className="luxury-subtitle">
 
-              L'expérience Maison Allys
+              L'accompagnement Maison Allys
 
             </p>
 
             <h2 className="luxury-title">
 
-              Plus qu'un service,
-              une véritable tranquillité d'esprit.
+              Un accompagnement humain,
+              attentionné et entièrement personnalisé.
 
             </h2>
 
             <p className="luxury-description">
 
-              Maison Allys vous accompagne dans tous les
-              moments de votre quotidien. Grâce à un réseau
-              de partenaires de confiance et une équipe
-              réactive, nous répondons à chacune de vos
-              demandes avec une exigence constante.
+              Maison Allys place l'écoute et la confiance au cœur
+              de chaque demande. Vous bénéficiez d'un interlocuteur
+              dédié, qui vous accompagne depuis la définition de
+              votre besoin jusqu'à la réalisation de votre projet.
 
             </p>
 
-            {features.map((item,index)=>(
+            {features.map((item, index) => (
 
-              <div className="feature" key={index}>
+              <div
+                className="feature"
+                key={index}
+              >
 
                 <div className="feature-icon">
 
@@ -250,9 +300,17 @@ export default function LuxuryExperience() {
 
                 <div>
 
-                  <h3>{item.title}</h3>
+                  <h3>
 
-                  <p>{item.text}</p>
+                    {item.title}
+
+                  </h3>
+
+                  <p>
+
+                    {item.text}
+
+                  </p>
 
                 </div>
 

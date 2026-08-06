@@ -241,39 +241,37 @@ export default function StorySection() {
 
       }
 
-      `}</style>
-
-      <section className="story">
+      `}</style>      <section className="story">
 
         <div className="story-container">
 
           <motion.div
             className="story-image"
-            initial={{opacity:0,x:-60}}
-            whileInView={{opacity:1,x:0}}
-            viewport={{once:true}}
-            transition={{duration:.8}}
+            initial={{ opacity:0, x:-60 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.8 }}
           >
 
             <img
               src="/images/story.jpg"
-              alt="Maison Allys"
+              alt="Notre histoire - Maison Allys"
             />
 
             <div className="story-card">
 
               <h3>
 
-                L'excellence
+                Une passion
 
               </h3>
 
               <p>
 
-                Chaque détail compte.
-                Chaque expérience est pensée
-                avec soin afin d'offrir un service
-                d'exception.
+                Une passion personnelle
+                devenue un service pensé
+                pour accompagner chacun
+                de vos projets.
 
               </p>
 
@@ -283,10 +281,10 @@ export default function StorySection() {
 
           <motion.div
             className="story-content"
-            initial={{opacity:0,x:60}}
-            whileInView={{opacity:1,x:0}}
-            viewport={{once:true}}
-            transition={{duration:.8}}
+            initial={{ opacity:0, x:60 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.8 }}
           >
 
             <div className="story-badge">
@@ -297,44 +295,73 @@ export default function StorySection() {
 
             <h2 className="story-title">
 
-              Une maison née
-              du sens du détail.
+              Une passion personnelle
+              devenue Maison Allys.
 
             </h2>
 
             <p>
 
-              Maison Allys est née d'une conviction :
-              le temps est devenu notre bien le plus précieux.
-              Notre ambition est d'offrir une conciergerie où
-              chaque demande est prise en charge avec élégance,
-              discrétion et exigence.
+              Maison Allys est avant tout née d'une histoire
+              personnelle. Depuis plusieurs années, mes proches
+              ont pris l'habitude de me solliciter lorsqu'ils
+              recherchent un restaurant, un lieu pour célébrer
+              un anniversaire, un prestataire de confiance,
+              une idée de cadeau, une activité à partager
+              ou encore un programme de voyage.
 
             </p>
 
             <p>
 
-              Nous croyons qu'un service d'exception ne se
-              limite pas à répondre à une demande.
-              Il consiste à anticiper, comprendre et créer des
-              expériences qui dépassent naturellement les attentes.
+              J'ai toujours aimé chercher, comparer, organiser
+              et imaginer des expériences adaptées à chaque
+              personne. Ce qui pouvait sembler anodin est
+              progressivement devenu une véritable passion :
+              trouver les bonnes solutions, faire gagner du
+              temps aux autres et voir leurs projets prendre
+              vie dans les meilleures conditions.
 
             </p>
 
             <p>
 
-              Voyage, gastronomie, bien-être, événements ou
-              demandes plus confidentielles...
-              Notre rôle est de transformer chaque besoin
-              en une expérience fluide, raffinée et entièrement
-              personnalisée.
+              En parallèle, j'ai constaté que nos quotidiens
+              sont de plus en plus chargés. Entre les obligations
+              professionnelles, la vie familiale et les imprévus,
+              il devient parfois difficile de consacrer plusieurs
+              heures à l'organisation d'un événement, à la
+              préparation d'un voyage ou à la recherche du bon
+              prestataire.
+
+            </p>
+
+            <p>
+
+              C'est de cette double réalité qu'est née
+              Maison Allys : la volonté de transformer
+              une passion personnelle en un service
+              professionnel, tout en conservant les
+              valeurs qui l'ont toujours guidée.
+
+            </p>
+
+            <p>
+
+              Maison Allys est pensée comme une maison
+              où chaque client est accueilli avec la même
+              attention, la même bienveillance et la même
+              implication qu'un membre de notre propre
+              entourage. Une maison de services lifestyle
+              où chacun peut se sentir écouté, compris
+              et accompagné à chaque étape de son projet.
 
             </p>
 
             <div className="story-quote">
 
-              « Le véritable luxe n'est pas d'avoir plus,
-              mais de n'avoir à se soucier de rien. »
+              « Prendre soin de vos projets
+              comme s'ils étaient les nôtres. »
 
             </div>
 

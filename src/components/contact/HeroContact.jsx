@@ -26,45 +26,74 @@ export default function HeroContact() {
 
       }
 
-      .hero-contact video{
+     .hero-contact{
 
-        position:absolute;
+position:relative;
 
-        inset:0;
+min-height:100vh;
 
-        width:100%;
+display:flex;
 
-        height:100%;
+align-items:center;
 
-        object-fit:cover;
+justify-content:center;
 
-      }
+overflow:hidden;
 
-      .hero-overlay{
+}
 
-        position:absolute;
+.hero-image{
 
-        inset:0;
+position:absolute;
 
-        background:
-        linear-gradient(rgba(20,14,10,.62),rgba(20,14,10,.62)),
-        radial-gradient(circle at top right,rgba(183,92,59,.25),transparent 45%);
+top:0;
 
-      }
+left:0;
 
-      .hero-content{
+width:100%;
 
-        position:relative;
+height:100%;
 
-        z-index:5;
+object-fit:cover;
 
-        width:92%;
+object-position:center center;
 
-        max-width:1300px;
+z-index:0;
 
-        color:white;
+}
 
-      }
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+rgba(28,20,15,.55),
+rgba(28,20,15,.55)
+);
+
+z-index:1;
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+width:90%;
+
+max-width:1100px;
+
+margin:auto;
+
+text-align:center;
+
+color:white;
+
+}
 
       .hero-badge{
 
@@ -204,29 +233,23 @@ export default function HeroContact() {
 
       `}</style>
 
-      <section className="hero-contact">
+  <section className="hero-contact">
 
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="/videos/contact.mp4"
-            type="video/mp4"
-          />
-        </video>
+  <img
+    src="/images/contact.jpg"
+    alt="Contact Maison Allys"
+    className="hero-image"
+  />
 
-        <div className="hero-overlay"/>
+  <div className="hero-overlay"></div>
 
-        <div className="hero-content">
+  <div className="hero-content">
 
-          <motion.div
-            initial={{opacity:0,y:40}}
-            animate={{opacity:1,y:0}}
-            transition={{duration:.8}}
-          >
+    <motion.div
+      initial={{ opacity:0, y:40 }}
+      animate={{ opacity:1, y:0 }}
+      transition={{ duration:.8 }}
+    >
 
             <div className="hero-badge">
 

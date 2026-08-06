@@ -11,56 +11,74 @@ export default function HeroServices() {
 
       .hero-services{
 
-        position:relative;
-        width:100%;
-        height:90vh;
-        overflow:hidden;
+position:relative;
 
-      }
+height:100vh;
 
-      .hero-video{
+min-height:700px;
 
-        position:absolute;
-        width:100%;
-        height:100%;
-        object-fit:cover;
+overflow:hidden;
 
-      }
+display:flex;
 
-      .hero-overlay{
+align-items:center;
 
-        position:absolute;
-        inset:0;
-        background:linear-gradient(
-          rgba(0,0,0,.55),
-          rgba(0,0,0,.45)
-        );
+justify-content:center;
 
-      }
+}
 
-      .hero-content{
+.hero-image{
 
-        position:relative;
-        z-index:2;
+position:absolute;
 
-        max-width:900px;
-        height:100%;
+top:0;
 
-        margin:auto;
+left:0;
 
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
+width:100%;
 
-        text-align:center;
+height:100%;
 
-        color:white;
+object-fit:cover;
 
-        padding:0 25px;
+object-position:center center;
 
-      }
+z-index:0;
 
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+rgba(25,18,12,.55),
+rgba(25,18,12,.55)
+);
+
+z-index:1;
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+width:90%;
+
+max-width:1100px;
+
+margin:auto;
+
+}
       .hero-badge{
 
         padding:10px 22px;
@@ -199,32 +217,25 @@ export default function HeroServices() {
 
       <section className="hero-services">
 
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="hero-video"
-        >
-          <source
-            src="/videos/services.mp4"
-            type="video/mp4"
-          />
-        </video>
+  <img
+    src="/images/services-hero.jpg"
+    alt="Services Maison Allys"
+    className="hero-image"
+  />
 
-        <div className="hero-overlay"></div>
+  <div className="hero-overlay"></div>
 
-        <motion.div
+  <motion.div
 
-          className="hero-content"
+    className="hero-content"
 
-          initial={{opacity:0,y:50}}
+    initial={{opacity:0,y:50}}
 
-          animate={{opacity:1,y:0}}
+    animate={{opacity:1,y:0}}
 
-          transition={{duration:.8}}
+    transition={{duration:.8}}
 
-        >
+  >
 
           <div className="hero-badge">
 

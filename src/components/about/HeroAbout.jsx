@@ -22,18 +22,19 @@ export default function HeroAbout() {
 
       }
 
-      .hero-about video{
+      .hero-image{
 
-        position:absolute;
+position:absolute;
 
-        inset:0;
+inset:0;
 
-        width:100%;
-        height:100%;
+width:100%;
 
-        object-fit:cover;
+height:100%;
 
-      }
+object-fit:cover;
+
+}
 
       .hero-overlay{
 
@@ -273,21 +274,15 @@ export default function HeroAbout() {
 
       <section className="hero-about">
 
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="/videos/about.mp4"
-            type="video/mp4"
-          />
-        </video>
+  <img
+    src="/images/about-hero.jpg"
+    alt="Maison Allys"
+    className="hero-image"
+  />
 
-        <div className="hero-overlay"></div>
+  <div className="hero-overlay"></div>
 
-        <div className="hero-content">
+  <div className="hero-content">
 
           <motion.div
             initial={{ opacity:0, y:40 }}

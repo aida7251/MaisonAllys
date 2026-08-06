@@ -1,64 +1,65 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-    X,
-    CheckCircle,
-    ArrowRight,
-    Phone
+  X,
+  CheckCircle,
+  ArrowRight,
+  Phone,
 } from "lucide-react";
 
 export default function ServiceDrawer({
 
-    service,
-    onClose
+  service,
+
+  onClose,
 
 }) {
 
-    useEffect(() => {
+  useEffect(() => {
 
-        if (service) {
+    if (service) {
 
-            document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
 
-        } else {
+    } else {
 
-            document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
 
-        }
+    }
 
-        return () => {
+    return () => {
 
-            document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
 
-        };
+    };
 
-    }, [service]);
+  }, [service]);
 
-    useEffect(() => {
+  useEffect(() => {
 
-        const handleEscape = (e) => {
+    const handleEscape = (e) => {
 
-            if (e.key === "Escape") {
+      if (e.key === "Escape") {
 
-                onClose();
+        onClose();
 
-            }
+      }
 
-        };
+    };
 
-        window.addEventListener("keydown", handleEscape);
+    window.addEventListener("keydown", handleEscape);
 
-        return () => {
+    return () => {
 
-            window.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("keydown", handleEscape);
 
-        };
+    };
 
-    }, [onClose]);
+  }, [onClose]);
 
-    return (
+  return (
 
-        <>
+    <>
 
 <style>{`
 
@@ -388,154 +389,225 @@ font-size:2.3rem;
 
 }
 
-`}</style>
-
-<AnimatePresence>
+`}</style><AnimatePresence>
 
 {
 
 service && (
 
-<><motion.div
-    className="drawer-overlay"
-    onClick={onClose}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
+<>
+
+<motion.div
+className="drawer-overlay"
+onClick={onClose}
+initial={{opacity:0}}
+animate={{opacity:1}}
+exit={{opacity:0}}
 />
 
 <motion.div
-    className="drawer"
-    onClick={(e) => e.stopPropagation()}
-    initial={{ x: "100%" }}
-    animate={{ x: 0 }}
-    exit={{ x: "100%" }}
-    transition={{
-        type: "spring",
-        stiffness: 180,
-        damping: 22
-    }}
+className="drawer"
+onClick={(e)=>e.stopPropagation()}
+initial={{x:"100%"}}
+animate={{x:0}}
+exit={{x:"100%"}}
+transition={{
+type:"spring",
+stiffness:180,
+damping:22
+}}
 >
 
-    <div className="drawer-image">
+<div className="drawer-image">
 
-        <img
-            src={service.image}
-            alt={service.title}
-        />
+<img
+src={service.image}
+alt={service.title}
+/>
 
-        <div
-            className="close-btn"
-            onClick={onClose}
-        >
-            <X size={22} />
-        </div>
+<div
+className="close-btn"
+onClick={onClose}
+>
 
-    </div>
+<X size={22}/>
 
-    <div className="drawer-content">
+</div>
 
-        <div className="drawer-category">
-            {service.category}
-        </div>
+</div>
 
-        <h2 className="drawer-title">
-            {service.title}
-        </h2>
+<div className="drawer-content">
 
-        <p className="drawer-description">
-            {service.description}
-            <br /><br />
-            Chaque prestation est organisée avec une attention particulière portée aux détails,
-            afin de vous offrir une expérience fluide, discrète et entièrement personnalisée.
-        </p>
+<div className="drawer-category">
 
-        <h3 className="section-title">
-            Ce service comprend
+{service.category}
+
+</div>
+
+<h2 className="drawer-title">
+
+{service.title}
+
+</h2>
+
+<p className="drawer-description">
+
+{service.description}
+
+<br /><br />
+
+Chaque demande est étudiée avec attention afin
+de vous proposer des solutions adaptées à vos
+envies, à vos contraintes et à votre budget.
+
+</p>
+
+<h3 className="section-title">
+
+Ce service comprend
+
+</h3>
+
+<div className="drawer-list">
+
+{
+
+service.features.map((item,index)=>(
+
+<div
+className="drawer-item"
+key={index}
+>
+
+<CheckCircle size={18}/>
+
+<span>
+
+{item}
+
+</span>
+
+</div>
+
+))
+
+}
+
+</div>        <h3 className="section-title">
+
+          ✦ Pourquoi Maison Allys ?
+
         </h3>
 
         <div className="drawer-list">
 
-            {service.features.map((item, index) => (
+          <div className="drawer-item">
 
-                <div
-                    className="drawer-item"
-                    key={index}
-                >
+            <CheckCircle size={18} />
 
-                    <CheckCircle size={18} />
+            <span>
 
-                    <span>{item}</span>
+              <strong>Un interlocuteur dédié :</strong> Une seule personne vous accompagne et assure le suivi de votre demande à chaque étape.
 
-                </div>
+            </span>
 
-            ))}
+          </div>
 
-        </div>
+          <div className="drawer-item">
 
-        <h3 className="section-title">
-            Pourquoi choisir Maison Allys ?
-        </h3>
+            <CheckCircle size={18} />
 
-        <div className="drawer-list">
+            <span>
 
-            <div className="drawer-item">
-                <CheckCircle size={18} />
-                <span>Un accompagnement entièrement personnalisé.</span>
-            </div>
+              <strong>Une écoute attentive :</strong> Vos envies, vos contraintes, votre localisation et votre budget sont pris en compte dès le premier échange.
 
-            <div className="drawer-item">
-                <CheckCircle size={18} />
-                <span>Un interlocuteur unique tout au long de votre projet.</span>
-            </div>
+            </span>
 
-            <div className="drawer-item">
-                <CheckCircle size={18} />
-                <span>Des partenaires sélectionnés avec exigence.</span>
-            </div>
+          </div>
 
-            <div className="drawer-item">
-                <CheckCircle size={18} />
-                <span>Disponibilité, discrétion et réactivité.</span>
-            </div>
+          <div className="drawer-item">
+
+            <CheckCircle size={18} />
+
+            <span>
+
+              <strong>Une sélection soignée :</strong> Les solutions et les prestataires sont recherchés en fonction des besoins spécifiques de votre projet.
+
+            </span>
+
+          </div>
+
+          <div className="drawer-item">
+
+            <CheckCircle size={18} />
+
+            <span>
+
+              <strong>Transparence :</strong> Les modalités de l'accompagnement, les prestations et les tarifs vous sont clairement présentés avant toute validation.
+
+            </span>
+
+          </div>
+
+          <div className="drawer-item">
+
+            <CheckCircle size={18} />
+
+            <span>
+
+              <strong>Service sur mesure :</strong> Chaque proposition est pensée spécialement pour vous, selon vos priorités et le niveau d'accompagnement souhaité.
+
+            </span>
+
+          </div>
+
+          <div className="drawer-item">
+
+            <CheckCircle size={18} />
+
+            <span>
+
+              <strong>Implication :</strong> Nous prenons soin de votre projet avec sérieux, attention et engagement, comme nous le ferions pour l'un de nos proches.
+
+            </span>
+
+          </div>
 
         </div>
 
         <div className="drawer-buttons">
 
-            <a
-                href="/contact"
-                className="btn-primary"
-            >
+          <a
+            href="/contact"
+            className="btn-primary"
+          >
 
-                Demander ce service
+            Demander ce service
 
-                <ArrowRight size={18} />
+            <ArrowRight size={18} />
 
-            </a>
+          </a>
 
-            <a
-                href="https://wa.me/221770000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-            >
+          <a
+            href="/contact"
+            className="btn-secondary"
+          >
 
-                <Phone size={18} />
+            <Phone size={18} />
 
-                Être rappelé
+            Être rappelé
 
-            </a>
+          </a>
 
         </div>
 
-    </div>
+      </div>
 
-</motion.div>
+    </motion.div>
 
-</>
+    </>
 
-)
+  )
 
 }
 

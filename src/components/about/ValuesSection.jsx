@@ -1,42 +1,44 @@
 import { motion } from "framer-motion";
 import {
-  Gem,
-  ShieldCheck,
   HeartHandshake,
+  HandHeart,
   Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 
 const values = [
   {
-    icon: Gem,
-    title: "Excellence",
-    description:
-      "Nous accordons une attention particulière à chaque détail afin d'offrir un service irréprochable, à la hauteur des attentes les plus exigeantes.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Discrétion",
-    description:
-      "La confidentialité est au cœur de notre accompagnement. Chaque demande est traitée avec la plus grande réserve et le plus grand professionnalisme.",
-  },
-  {
     icon: HeartHandshake,
     title: "Confiance",
     description:
-      "Nous construisons une relation durable avec nos clients grâce à l'écoute, la transparence et un engagement constant.",
+      "Nous construisons avec nos clients une relation sincère et durable, fondée sur l'écoute, la transparence et le respect de nos engagements.",
+  },
+  {
+    icon: HandHeart,
+    title: "Bienveillance",
+    description:
+      "Chaque demande est accueillie avec attention et sans jugement. Nous prenons le temps de comprendre ce qui compte réellement pour vous.",
   },
   {
     icon: Sparkles,
     title: "Personnalisation",
     description:
-      "Chaque client est unique. Nos prestations sont pensées sur mesure afin de répondre parfaitement à votre mode de vie.",
+      "Chaque client, chaque envie et chaque budget sont différents. Nos propositions sont donc pensées en fonction de votre situation et de vos priorités.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Qualité",
+    description:
+      "Nous recherchons avec soin les solutions et les prestataires adaptés à votre projet afin de vous proposer un accompagnement sérieux et cohérent.",
   },
 ];
 
 export default function ValuesSection() {
+
   return (
     <>
       <style>{`
+
       @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
       .values{
@@ -50,7 +52,9 @@ export default function ValuesSection() {
       .values-container{
 
         width:92%;
+
         max-width:1300px;
+
         margin:auto;
 
       }
@@ -59,7 +63,7 @@ export default function ValuesSection() {
 
         text-align:center;
 
-        max-width:760px;
+        max-width:820px;
 
         margin:0 auto 80px;
 
@@ -99,7 +103,9 @@ export default function ValuesSection() {
 
         color:#4B3222;
 
-        margin-bottom:24px;
+        line-height:1.15;
+
+        margin-bottom:28px;
 
       }
 
@@ -107,7 +113,7 @@ export default function ValuesSection() {
 
         color:#6D5A4D;
 
-        line-height:1.9;
+        line-height:2;
 
         font-size:1.08rem;
 
@@ -120,6 +126,8 @@ export default function ValuesSection() {
         grid-template-columns:repeat(2,1fr);
 
         gap:35px;
+
+        margin-top:70px;
 
       }
 
@@ -205,6 +213,46 @@ export default function ValuesSection() {
 
       }
 
+      .values-footer{
+
+        max-width:900px;
+
+        margin:80px auto 0;
+
+        text-align:center;
+
+        padding:45px;
+
+        background:white;
+
+        border-radius:30px;
+
+        box-shadow:0 20px 45px rgba(0,0,0,.05);
+
+      }
+
+      .values-footer h3{
+
+        font-family:'Cormorant Garamond',serif;
+
+        font-size:2.3rem;
+
+        color:#4B3222;
+
+        margin-bottom:18px;
+
+      }
+
+      .values-footer p{
+
+        color:#6D5A4D;
+
+        font-size:1.1rem;
+
+        line-height:2;
+
+      }
+
       @media(max-width:1000px){
 
         .values-grid{
@@ -237,20 +285,24 @@ export default function ValuesSection() {
 
         }
 
+        .values-footer{
+
+          padding:35px 28px;
+
+        }
+
       }
 
-      `}</style>
-
-      <section className="values">
+      `}</style>      <section className="values">
 
         <div className="values-container">
 
           <motion.div
             className="values-header"
-            initial={{opacity:0,y:40}}
-            whileInView={{opacity:1,y:0}}
-            viewport={{once:true}}
-            transition={{duration:.7}}
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.7 }}
           >
 
             <div className="values-badge">
@@ -261,16 +313,17 @@ export default function ValuesSection() {
 
             <h2 className="values-title">
 
-              Les principes qui
-              guident chacune de nos actions.
+              Les principes qui guident
+              chacun de nos accompagnements.
 
             </h2>
 
             <p className="values-description">
 
-              Maison Allys repose sur des valeurs fortes qui inspirent
-              chacune de nos décisions et chacune des expériences que
-              nous créons pour nos clients.
+              Maison Allys s'est construite autour de
+              valeurs humaines qui orientent notre manière
+              d'écouter, de conseiller et d'accompagner
+              chaque client.
 
             </p>
 
@@ -278,11 +331,11 @@ export default function ValuesSection() {
 
           <div className="values-grid">
 
-            {values.map((value,index)=>{
+            {values.map((value, index) => {
 
-              const Icon=value.icon;
+              const Icon = value.icon;
 
-              return(
+              return (
 
                 <motion.div
 
@@ -290,22 +343,22 @@ export default function ValuesSection() {
 
                   className="value-card"
 
-                  initial={{opacity:0,y:40}}
+                  initial={{ opacity:0, y:40 }}
 
-                  whileInView={{opacity:1,y:0}}
+                  whileInView={{ opacity:1, y:0 }}
 
-                  viewport={{once:true}}
+                  viewport={{ once:true }}
 
                   transition={{
                     duration:.6,
-                    delay:index*.15
+                    delay:index * .15
                   }}
 
                 >
 
                   <div className="value-icon">
 
-                    <Icon size={34}/>
+                    <Icon size={34} />
 
                   </div>
 
@@ -332,6 +385,33 @@ export default function ValuesSection() {
             })}
 
           </div>
+
+          <motion.div
+            className="values-footer"
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.7, delay:.2 }}
+          >
+
+            <h3>
+
+              Maison Allys
+
+            </h3>
+
+            <p>
+
+              <strong>Chaque projet compte.</strong>
+
+              <br /><br />
+
+              Nous prenons soin de vos projets avec la
+              même attention que s'ils étaient les nôtres.
+
+            </p>
+
+          </motion.div>
 
         </div>
 
