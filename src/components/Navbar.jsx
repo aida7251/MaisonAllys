@@ -409,14 +409,14 @@ font-size:1.2rem;
               Comment ça marche
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/contact"
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
             >
               Contact
-            </NavLink>
+            </NavLink> */}
 
           </nav>
 

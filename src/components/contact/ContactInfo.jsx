@@ -18,7 +18,7 @@ const infos = [
   {
     icon: Phone,
     title: "Téléphone",
-    value: "+33 6 XX XX XX XX",
+    value: "+33 07 83 42 09 47",
     description: "Un conseiller peut vous rappeler sur demande."
   },
   {

@@ -278,7 +278,7 @@ approche humaine, attentive et sur mesure.
 <div className="socials">
 
 <a
-href="https://www.instagram.com/maisonallys"
+href="https://www.instagram.com/maison_allys?igsi=MWJqYm4zbjFndmNtYg=="
 target="_blank"
 rel="noopener noreferrer"
 className="social-link"
@@ -288,7 +288,7 @@ Instagram
 
 </a>
 
-<a
+{/* <a
 href="https://www.facebook.com/maisonallys"
 target="_blank"
 rel="noopener noreferrer"
@@ -308,7 +308,7 @@ className="social-link"
 
 TikTok
 
-</a>
+</a> */}
 
 </div>
 
@@ -384,7 +384,7 @@ Dakar, Sénégal
 
 <span>
 
-+221 XX XXX XX XX
++33 07 83 42 09 47
 
 </span>
 

@@ -287,40 +287,68 @@ export default function Hero() {
 
         }
 
+        // @media(max-width:600px){
+
+        //   .hero-title{
+
+        //     font-size:2.8rem;
+
+        //   }
+
+        //   .hero-subtitle{
+
+        //     font-size:.75rem;
+
+        //     letter-spacing:3px;
+
+        //   }
+
+        //   .hero-buttons{
+
+        //     flex-direction:column;
+
+        //     width:100%;
+
+        //   }
+
+        //   .primary-btn,
+        //   .secondary-btn{
+
+        //     width:100%;
+
+        //     text-align:center;
+
+        //   }
+
+        // }
+
         @media(max-width:600px){
 
-          .hero-title{
+  .hero-content{
+    margin-top:110px;
+  }
 
-            font-size:2.8rem;
+  .hero-title{
+    font-size:2.8rem;
+  }
 
-          }
+  .hero-subtitle{
+    font-size:.75rem;
+    letter-spacing:3px;
+  }
 
-          .hero-subtitle{
+  .hero-buttons{
+    flex-direction:column;
+    width:100%;
+  }
 
-            font-size:.75rem;
+  .primary-btn,
+  .secondary-btn{
+    width:100%;
+    text-align:center;
+  }
 
-            letter-spacing:3px;
-
-          }
-
-          .hero-buttons{
-
-            flex-direction:column;
-
-            width:100%;
-
-          }
-
-          .primary-btn,
-          .secondary-btn{
-
-            width:100%;
-
-            text-align:center;
-
-          }
-
-        }
+}
 
       `}</style>      <section className="hero">
 
