@@ -304,7 +304,7 @@ object-fit:cover;
 
             </h1>
 
-            <p className="hero-text">
+            {/* <p className="hero-text">
 
               Maison Allys est née d'une conviction simple :
               le véritable luxe est celui qui vous libère du
@@ -314,7 +314,7 @@ object-fit:cover;
               discrétion et excellence afin de transformer
               votre quotidien en une expérience unique.
 
-            </p>
+            </p> */}
 
             <div className="hero-buttons">
 

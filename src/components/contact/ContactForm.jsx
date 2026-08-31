@@ -105,17 +105,12 @@ export default function ContactForm() {
 
   const sendEmail=async()=>{
 
-    await emailjs.send(
-
-      "service_darf2vd",
-
-      "template_o5y4a4e",
-
-      form,
-
-      "O7BCiWI_xGQTKHZgG"
-
-    );
+  await emailjs.send(
+  "service_lmhscud",
+  "template_79h1t05",
+  form,
+  "f1szsDHI9tgZnCBEq"
+);
 
   };
 
@@ -141,12 +136,16 @@ export default function ContactForm() {
 
     }
 
-    catch{
+   catch (error) {
 
-      setStatus("error");
+  console.error("========== EMAILJS ERROR ==========");
+  console.error("Status :", error?.status);
+  console.error("Message :", error?.text);
+  console.error("Full error :", error);
 
-    }
+  setStatus("error");
 
+}
   };
 
   return(

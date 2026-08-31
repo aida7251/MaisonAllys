@@ -15,9 +15,9 @@ export default function About() {
 
       <StorySection />
 
-      <VisionSection />
+      {/* <VisionSection />
 
-      <ValuesSection />
+      <ValuesSection /> */}
 
       <ExperienceSection />
 

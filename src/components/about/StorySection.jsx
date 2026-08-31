@@ -299,8 +299,34 @@ export default function StorySection() {
               devenue Maison Allys.
 
             </h2>
-
             <p>
+  Maison Allys est née d'une histoire personnelle. Depuis plusieurs
+  années, mes proches me sollicitent pour trouver un restaurant,
+  organiser un événement, préparer un voyage ou dénicher un prestataire
+  de confiance.
+</p>
+
+<p>
+  J'ai toujours aimé chercher, comparer et organiser des expériences
+  adaptées à chacun. Avec des quotidiens de plus en plus chargés,
+  Maison Allys est devenue une évidence : mettre cette passion au
+  service des autres et leur faire gagner du temps.
+</p>
+
+<p>
+  Maison Allys est ainsi pensée comme une véritable maison de services
+  lifestyle, où chaque client bénéficie d'une attention personnalisée,
+  d'écoute et d'un accompagnement de confiance.
+</p>
+
+<div className="story-quote">
+
+  « Prendre soin de vos projets
+  comme s'ils étaient les nôtres. »
+
+</div>
+
+            {/* <p>
 
               Maison Allys est avant tout née d'une histoire
               personnelle. Depuis plusieurs années, mes proches
@@ -363,7 +389,7 @@ export default function StorySection() {
               « Prendre soin de vos projets
               comme s'ils étaient les nôtres. »
 
-            </div>
+            </div> */}
 
           </motion.div>
 
