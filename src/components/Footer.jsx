@@ -372,7 +372,7 @@ Contact
 
 <span>
 
-Dakar, Sénégal
+France , Sénégal , International
 
 </span>
 
