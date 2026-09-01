@@ -359,7 +359,7 @@ export default function Hero() {
           transition={{ duration: 1.6 }}
         >
           <img
-            src="/images/demande.jpg"
+            src="/images/hero.jpeg"
             alt="Maison Allys"
           />
         </motion.div>
