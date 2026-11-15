@@ -10,9 +10,11 @@ export default function HeroContact() {
 
         position:relative;
 
-        height:100vh;
+        min-height:100vh;
 
-        min-height:820px;
+        min-height:100svh;
+
+        padding:150px 0 90px;
 
         display:flex;
 
@@ -26,76 +28,58 @@ export default function HeroContact() {
 
       }
 
-     .hero-contact{
+      .hero-contact .hero-image{
 
-position:relative;
+        position:absolute;
 
-min-height:100vh;
+        inset:0;
 
-display:flex;
+        width:100%;
 
-align-items:center;
+        height:100%;
 
-justify-content:center;
+        object-fit:cover;
 
-overflow:hidden;
+        object-position:center center;
 
-}
+        z-index:0;
 
-.hero-image{
+      }
 
-position:absolute;
+      .hero-contact .hero-overlay{
 
-top:0;
+        position:absolute;
 
-left:0;
+        inset:0;
 
-width:100%;
+        background:linear-gradient(
+          rgba(28,20,15,.55),
+          rgba(28,20,15,.55)
+        );
 
-height:100%;
+        z-index:1;
 
-object-fit:cover;
+      }
 
-object-position:center center;
+      .hero-contact .hero-content{
 
-z-index:0;
+        position:relative;
 
-}
+        z-index:2;
 
-.hero-overlay{
+        width:90%;
 
-position:absolute;
+        max-width:1100px;
 
-inset:0;
+        margin:auto;
 
-background:linear-gradient(
-rgba(28,20,15,.55),
-rgba(28,20,15,.55)
-);
+        text-align:center;
 
-z-index:1;
+        color:white;
 
-}
+      }
 
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-width:90%;
-
-max-width:1100px;
-
-margin:auto;
-
-text-align:center;
-
-color:white;
-
-}
-
-      .hero-badge{
+      .hero-contact .hero-badge{
 
         display:inline-flex;
 
@@ -119,25 +103,33 @@ color:white;
 
       }
 
-      .hero-title{
+      .hero-contact .hero-title{
 
         margin-top:28px;
 
         font-family:'Cormorant Garamond',serif;
 
-        font-size:5.3rem;
+        font-size:clamp(2.4rem, 5.5vw, 5.3rem);
 
         line-height:1.05;
 
         max-width:760px;
 
+        margin-left:auto;
+
+        margin-right:auto;
+
       }
 
-      .hero-description{
+      .hero-contact .hero-description{
 
         margin-top:28px;
 
         max-width:650px;
+
+        margin-left:auto;
+
+        margin-right:auto;
 
         font-size:1.15rem;
 
@@ -147,7 +139,7 @@ color:white;
 
       }
 
-      .hero-cards{
+      .hero-contact .hero-cards{
 
         margin-top:70px;
 
@@ -159,9 +151,15 @@ color:white;
 
         max-width:980px;
 
+        margin-left:auto;
+
+        margin-right:auto;
+
+        text-align:left;
+
       }
 
-      .hero-card{
+      .hero-contact .hero-card{
 
         padding:28px;
 
@@ -175,7 +173,7 @@ color:white;
 
       }
 
-      .hero-card h3{
+      .hero-contact .hero-card h3{
 
         font-family:'Cormorant Garamond',serif;
 
@@ -185,7 +183,7 @@ color:white;
 
       }
 
-      .hero-card p{
+      .hero-contact .hero-card p{
 
         color:rgba(255,255,255,.78);
 
@@ -193,18 +191,43 @@ color:white;
 
       }
 
-      @media(max-width:1000px){
+      /* Petits écrans d'ordinateur (peu de hauteur) */
+      @media(max-height:800px){
 
-        .hero-title{
-
-          font-size:4rem;
-
+        .hero-contact{
+          padding:130px 0 60px;
         }
 
-        .hero-cards{
+        .hero-contact .hero-title{
+          font-size:clamp(2.2rem, 4.5vw, 4rem);
+          margin-top:20px;
+        }
 
+        .hero-contact .hero-description{
+          margin-top:18px;
+          line-height:1.7;
+        }
+
+        .hero-contact .hero-cards{
+          margin-top:36px;
+        }
+
+        .hero-contact .hero-card{
+          padding:20px;
+        }
+
+        .hero-contact .hero-card h3{
+          font-size:1.6rem;
+          margin-bottom:8px;
+        }
+
+      }
+
+      @media(max-width:1000px){
+
+        .hero-contact .hero-cards{
           grid-template-columns:1fr;
-
+          margin-top:40px;
         }
 
       }
@@ -212,21 +235,16 @@ color:white;
       @media(max-width:768px){
 
         .hero-contact{
-
-          min-height:760px;
-
+          padding:120px 0 60px;
         }
 
-        .hero-title{
-
-          font-size:3rem;
-
-        }
-
-        .hero-description{
-
+        .hero-contact .hero-description{
           font-size:1rem;
+        }
 
+        .hero-contact .hero-badge{
+          font-size:.75rem;
+          padding:10px 18px;
         }
 
       }

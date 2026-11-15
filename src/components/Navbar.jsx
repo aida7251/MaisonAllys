@@ -162,7 +162,9 @@ font-weight:600;
 
 line-height:1;
 
-color:#4B3222;
+color:${scrolled ? "#4B3222" : "#FFFFFF"};
+
+transition:color .4s;
 
 white-space:nowrap;
 
@@ -192,7 +194,7 @@ font-size:.95rem;
 
 font-weight:500;
 
-color:#4B3222;
+color:${scrolled ? "#4B3222" : "#FFFFFF"};
 
 transition:.3s;
 
@@ -274,7 +276,7 @@ display:none;
 
 cursor:pointer;
 
-color:#4B3222;
+color:${scrolled || menuOpen ? "#4B3222" : "#FFFFFF"};
 
 z-index:10001;
 
@@ -303,6 +305,12 @@ font-size:1.6rem;
 .menu{
 
 display:block;
+
+}
+
+.navbar{
+
+padding:10px 0;
 
 }
 
@@ -344,6 +352,8 @@ transition:.4s;
 
 font-size:1.2rem;
 
+color:#4B3222;
+
 }
 
 }
@@ -357,7 +367,9 @@ font-size:1.2rem;
 >
 
   <img
-    src="/images/logo.png"
+    // src="/images/logo.png"
+    src="/images/logo.svg"
+
     alt="Maison Allys"
     className="logo-image"
   />

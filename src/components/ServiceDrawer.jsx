@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   X,
   CheckCircle,
@@ -25,13 +26,13 @@ export default function ServiceDrawer({
 
     } else {
 
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
 
     }
 
     return () => {
 
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
 
     };
 
@@ -99,7 +100,7 @@ background:rgba(0,0,0,.45);
 
 backdrop-filter:blur(8px);
 
-z-index:999;
+z-index:10050;
 
 }
 
@@ -117,13 +118,15 @@ max-width:100%;
 
 height:100vh;
 
+height:100dvh;
+
 background:white;
 
 overflow-y:auto;
 
 box-shadow:-30px 0 80px rgba(0,0,0,.18);
 
-z-index:1000;
+z-index:10060;
 
 display:flex;
 
@@ -148,6 +151,8 @@ border-radius:20px;
 .drawer-image{
 
 height:320px;
+
+flex-shrink:0;
 
 position:relative;
 
@@ -176,6 +181,8 @@ transform:scale(1.05);
 .close-btn{
 
 position:absolute;
+
+z-index:2;
 
 top:25px;
 
@@ -245,7 +252,7 @@ margin-bottom:22px;
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:3rem;
+font-size:clamp(2rem, 4vw, 3rem);
 
 line-height:1.1;
 
@@ -329,6 +336,8 @@ margin-top:50px;
 
 display:flex;
 
+text-decoration:none;
+
 justify-content:center;
 
 align-items:center;
@@ -361,6 +370,8 @@ transform:translateY(-3px);
 
 display:flex;
 
+text-decoration:none;
+
 justify-content:center;
 
 align-items:center;
@@ -384,6 +395,51 @@ transition:.35s;
 background:#B75C3B;
 
 color:white;
+
+}
+
+/* Petits écrans d'ordinateur (peu de hauteur) */
+@media(max-height:800px){
+
+.drawer-image{
+height:220px;
+}
+
+.drawer-content{
+padding:32px 40px;
+}
+
+.drawer-title{
+font-size:clamp(1.9rem, 3.5vw, 2.5rem);
+margin-bottom:16px;
+}
+
+.drawer-description{
+line-height:1.7;
+margin-bottom:28px;
+}
+
+.drawer-list{
+gap:12px;
+margin-bottom:32px;
+}
+
+.drawer-buttons{
+margin-top:30px;
+gap:14px;
+}
+
+.btn-primary,
+.btn-secondary{
+padding:15px;
+}
+
+.close-btn{
+top:18px;
+right:18px;
+width:46px;
+height:46px;
+}
 
 }
 
@@ -604,27 +660,29 @@ key={index}
 
         <div className="drawer-buttons">
 
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="btn-primary"
+            onClick={onClose}
           >
 
             Demander ce service
 
             <ArrowRight size={18} />
 
-          </a>
+          </Link>
 
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="btn-secondary"
+            onClick={onClose}
           >
 
             <Phone size={18} />
 
             Être rappelé
 
-          </a>
+          </Link>
           <button
   className="back-btn"
   onClick={onClose}

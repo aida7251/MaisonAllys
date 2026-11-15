@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion.create ? motion.create(Link) : motion(Link);
 
 export default function Hero() {
   return (
@@ -18,7 +21,11 @@ export default function Hero() {
 
           width:100%;
 
-          height:100vh;
+          min-height:100vh;
+
+          min-height:100svh;
+
+          padding:150px 0 90px;
 
           overflow:hidden;
 
@@ -143,7 +150,7 @@ export default function Hero() {
 
           font-family:'Cormorant Garamond',serif;
 
-          font-size:5.4rem;
+          font-size:clamp(2.4rem, 5.5vw, 5.4rem);
 
           line-height:1.08;
 
@@ -273,12 +280,6 @@ export default function Hero() {
 
         @media(max-width:900px){
 
-          .hero-title{
-
-            font-size:3.8rem;
-
-          }
-
           .hero-text{
 
             font-size:1rem;
@@ -287,49 +288,40 @@ export default function Hero() {
 
         }
 
-        // @media(max-width:600px){
+        /* Petits écrans d'ordinateur (peu de hauteur) */
+        @media(max-height:800px){
 
-        //   .hero-title{
+          .hero{
+            padding:130px 0 60px;
+          }
 
-        //     font-size:2.8rem;
+          .hero-title{
+            font-size:clamp(2.2rem, 4.5vw, 4rem);
+            margin-bottom:20px;
+          }
 
-        //   }
+          .hero-subtitle{
+            margin-bottom:16px;
+          }
 
-        //   .hero-subtitle{
+          .hero-text{
+            line-height:1.7;
+          }
 
-        //     font-size:.75rem;
+          .hero-buttons{
+            margin-top:32px;
+          }
 
-        //     letter-spacing:3px;
-
-        //   }
-
-        //   .hero-buttons{
-
-        //     flex-direction:column;
-
-        //     width:100%;
-
-        //   }
-
-        //   .primary-btn,
-        //   .secondary-btn{
-
-        //     width:100%;
-
-        //     text-align:center;
-
-        //   }
-
-        // }
+        }
 
         @media(max-width:600px){
 
-  .hero-content{
-    margin-top:110px;
+  .hero{
+    padding:120px 0 60px;
   }
 
   .hero-title{
-    font-size:2.8rem;
+    font-size:2.4rem;
   }
 
   .hero-subtitle{
@@ -407,8 +399,8 @@ export default function Hero() {
 
           <div className="hero-buttons">
 
-            <motion.a
-              href="#services"
+            <MotionLink
+              to="/services"
               className="primary-btn"
               whileHover={{
                 scale: 1.05,
@@ -421,10 +413,10 @@ export default function Hero() {
 
               Découvrir nos services
 
-            </motion.a>
+            </MotionLink>
 
-            <motion.a
-              href="#contact"
+            <MotionLink
+              to="/contact"
               className="secondary-btn"
               whileHover={{
                 scale: 1.05,
@@ -437,7 +429,7 @@ export default function Hero() {
 
               Nous contacter
 
-            </motion.a>
+            </MotionLink>
 
           </div>
 

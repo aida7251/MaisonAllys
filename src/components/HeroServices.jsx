@@ -11,75 +11,86 @@ export default function HeroServices() {
 
       .hero-services{
 
-position:relative;
+        position:relative;
 
-height:100vh;
+        min-height:100vh;
 
-min-height:700px;
+        min-height:100svh;
 
-overflow:hidden;
+        padding:150px 0 90px;
 
-display:flex;
+        overflow:hidden;
 
-align-items:center;
+        display:flex;
 
-justify-content:center;
+        align-items:center;
 
-}
+        justify-content:center;
 
-.hero-image{
+        background:#19120C;
 
-position:absolute;
+      }
 
-top:0;
+      .hero-services .hero-image{
 
-left:0;
+        position:absolute;
 
-width:100%;
+        inset:0;
 
-height:100%;
+        width:100%;
 
-object-fit:cover;
+        height:100%;
 
-object-position:center center;
+        object-fit:cover;
 
-z-index:0;
+        object-position:center center;
 
-}
+        z-index:0;
 
-.hero-overlay{
+      }
 
-position:absolute;
+      .hero-services .hero-overlay{
 
-inset:0;
+        position:absolute;
 
-background:linear-gradient(
-rgba(25,18,12,.55),
-rgba(25,18,12,.55)
-);
+        inset:0;
 
-z-index:1;
+        background:linear-gradient(
+          rgba(25,18,12,.55),
+          rgba(25,18,12,.55)
+        );
 
-}
+        z-index:1;
 
-.hero-content{
+      }
 
-position:relative;
+      .hero-services .hero-content{
 
-z-index:2;
+        position:relative;
 
-text-align:center;
+        z-index:2;
 
-color:white;
+        text-align:center;
 
-width:90%;
+        color:white;
 
-max-width:1100px;
+        width:90%;
 
-margin:auto;
+        max-width:1100px;
 
-}
-      .hero-badge{
+        margin:auto;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+      }
+
+      .hero-services .hero-badge{
+
+        display:inline-block;
 
         padding:10px 22px;
 
@@ -99,11 +110,11 @@ margin:auto;
 
       }
 
-      .hero-title{
+      .hero-services .hero-title{
 
         font-family:"Cormorant Garamond",serif;
 
-        font-size:5rem;
+        font-size:clamp(2.4rem, 5.5vw, 5rem);
 
         line-height:1.1;
 
@@ -111,13 +122,13 @@ margin:auto;
 
       }
 
-      .hero-title span{
+      .hero-services .hero-title span{
 
         color:#E1CBB2;
 
       }
 
-      .hero-description{
+      .hero-services .hero-description{
 
         max-width:720px;
 
@@ -131,15 +142,19 @@ margin:auto;
 
       }
 
-      .hero-btn{
+      .hero-services .hero-btn{
 
         display:inline-flex;
+
         align-items:center;
+
         gap:12px;
 
         background:#B75C3B;
 
         color:white;
+
+        text-decoration:none;
 
         padding:18px 34px;
 
@@ -151,7 +166,7 @@ margin:auto;
 
       }
 
-      .hero-btn:hover{
+      .hero-services .hero-btn:hover{
 
         transform:translateY(-4px);
 
@@ -161,7 +176,7 @@ margin:auto;
 
       }
 
-      .scroll-indicator{
+      .hero-services .scroll-indicator{
 
         position:absolute;
 
@@ -170,6 +185,8 @@ margin:auto;
         left:50%;
 
         transform:translateX(-50%);
+
+        z-index:2;
 
         color:white;
 
@@ -181,12 +198,29 @@ margin:auto;
 
       }
 
-      @media(max-width:900px){
+      /* Petits écrans d'ordinateur (peu de hauteur) */
+      @media(max-height:800px){
 
-        .hero-title{
+        .hero-services{
+          padding:130px 0 70px;
+        }
 
-          font-size:3.5rem;
+        .hero-services .hero-title{
+          font-size:clamp(2.2rem, 4.5vw, 4rem);
+          margin-bottom:18px;
+        }
 
+        .hero-services .hero-badge{
+          margin-bottom:18px;
+        }
+
+        .hero-services .hero-description{
+          line-height:1.7;
+          margin-bottom:30px;
+        }
+
+        .hero-services .scroll-indicator{
+          bottom:20px;
         }
 
       }
@@ -194,21 +228,16 @@ margin:auto;
       @media(max-width:600px){
 
         .hero-services{
-
-          height:80vh;
-
+          padding:120px 0 70px;
         }
 
-        .hero-title{
-
-          font-size:2.6rem;
-
-        }
-
-        .hero-description{
-
+        .hero-services .hero-description{
           font-size:1rem;
+        }
 
+        .hero-services .hero-badge{
+          font-size:.7rem;
+          letter-spacing:2px;
         }
 
       }
@@ -217,25 +246,25 @@ margin:auto;
 
       <section className="hero-services">
 
-  <img
-    src="/images/services-hero.jpg"
-    alt="Services Maison Allys"
-    className="hero-image"
-  />
+        <img
+          src="/images/services-hero.jpg"
+          alt="Services Maison Allys"
+          className="hero-image"
+        />
 
-  <div className="hero-overlay"></div>
+        <div className="hero-overlay"></div>
 
-  <motion.div
+        <motion.div
 
-    className="hero-content"
+          className="hero-content"
 
-    initial={{opacity:0,y:50}}
+          initial={{opacity:0,y:50}}
 
-    animate={{opacity:1,y:0}}
+          animate={{opacity:1,y:0}}
 
-    transition={{duration:.8}}
+          transition={{duration:.8}}
 
-  >
+        >
 
           <div className="hero-badge">
 
